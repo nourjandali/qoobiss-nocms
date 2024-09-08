@@ -100,10 +100,6 @@ const config = {
       },
 
       colors: {
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-
         accent: "var(--accent)",
 
         "dark-indigo": "var(--dark-indigo)",
@@ -120,32 +116,6 @@ const config = {
         "dark-border": "var(--dark-border)",
         "dark-chapeau": "var(--dark-chapeau)",
         "dark-stroke": "var(--dark-stroke)",
-
-        foreground: "var(--foreground)",
-        primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
-        },
-        secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
-        },
-        destructive: {
-          DEFAULT: "var(--destructive)",
-          foreground: "var(--destructive-foreground)",
-        },
-        muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
-        },
-        popover: {
-          DEFAULT: "var(--popover)",
-          foreground: "var(--popover-foreground)",
-        },
-        card: {
-          DEFAULT: "var(--card)",
-          foreground: "var(--card-foreground)",
-        },
       },
 
       keyframes: {

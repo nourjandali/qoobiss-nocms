@@ -1,20 +1,18 @@
 import { Banner } from "@/components/Banner";
-import { Footer } from "@/components/Footer";
 import { GetInTouch } from "@/components/GetInTouch";
-import { Hero } from "@/components/UseCases/Hero";
-import { Tabs } from "@/components/UseCases/Tabs";
+import { Hero } from "@/components/use-cases/Hero";
+import { Tabs } from "@/components/use-cases/Tabs";
 
 export default function Home() {
   return (
     <main>
       <Banner
         title="Use cases"
-        className="bg-[url('/use-cases-banner-mobile.png')] lg:bg-[url('/use-cases-banner.svg')]"
+        className="bg-[url('/use-cases-banner-mobile.png')] bg-cover lg:bg-[url('/use-cases-banner.svg')]"
       />
       <Hero />
       <Tabs />
       <GetInTouch className="lg:pt-40" />
-      <Footer />
     </main>
   );
 }

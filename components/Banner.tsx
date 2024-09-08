@@ -26,16 +26,16 @@ export const Banner = (props: BannerProps) => {
       <h1 className="text-white text-4xl lg:text-11xl lg:font-light z-10 container container-padding">
         {title}
       </h1>
-      <div className="absolute z-0 inset-0 pointer-events-none size-full lg:block hidden">
+      <div className="absolute z-0 inset-0 pointer-events-none lg:block hidden">
         <img
-          src="/banner-ellipse.svg"
+          src="/banner-ellipse.png"
           alt="Banner ellipse"
           className="size-full object-cover"
         />
       </div>
-      <div className="absolute z-0 inset-0 pointer-events-none size-full lg:hidden">
+      <div className="absolute z-0 inset-0 pointer-events-none lg:hidden">
         <img
-          src="/banner-ellipse-mobile.svg"
+          src="/banner-ellipse-mobile.png"
           alt="Banner ellipse"
           className="size-full object-cover"
         />

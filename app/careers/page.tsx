@@ -1,14 +1,11 @@
 import { Careers } from "@/components/Careers";
-import { Certification } from "@/components/Certification";
-import { Cta } from "@/components/Cta";
-import { Footer } from "@/components/Footer";
+import { GetInTouch } from "@/components/GetInTouch";
 
 export default function Home() {
   return (
     <main>
       <Careers />
-      <Certification showCertifications={false} />
-      <Footer />
+      <GetInTouch className="pt-5" />
     </main>
   );
 }

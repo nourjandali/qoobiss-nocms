@@ -1,10 +1,9 @@
-import { FeatureOne } from "@/components/AboutUs/FeatureOne";
-import { FeatureTwo } from "@/components/AboutUs/FeatureTwo";
-import { Hero } from "@/components/AboutUs/Hero";
-import { Team } from "@/components/AboutUs/Team";
+import { FeatureOne } from "@/components/about-us/FeatureOne";
+import { FeatureTwo } from "@/components/about-us/FeatureTwo";
+import { Hero } from "@/components/about-us/Hero";
+import { Team } from "@/components/about-us/Team";
 import { Banner } from "@/components/Banner";
 import { Certification } from "@/components/Certification";
-import { Footer } from "@/components/Footer";
 import { GetInTouch } from "@/components/GetInTouch";
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
       <Team />
       <Certification />
       <GetInTouch />
-      <Footer />
     </main>
   );
 }

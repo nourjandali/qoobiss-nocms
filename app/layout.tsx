@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/Navbar";
 import { Sora as FontSans } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
-import Spline from "@splinetool/react-spline";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -26,6 +26,7 @@ export default function RootLayout({
         <div>
           <Navbar />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

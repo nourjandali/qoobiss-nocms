@@ -53,7 +53,7 @@ export const Footer = (props: FooterProps) => {
   } as Props;
 
   return (
-    <footer className="pt-20 lg:pt-28 relative">
+    <footer className="pb-4 lg:pb-0 pt-20 lg:pt-28 relative">
       <div className="container container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-[0.35fr_1fr] lg:mb-20">
           <img src="/footer-qoobiss.svg" alt="qoobiss logo" />
@@ -100,7 +100,7 @@ export const Footer = (props: FooterProps) => {
           </div>
 
           <div className="flex flex-col gap-2.5">
-            <h2 className="text-md xxl:text-2xl xxl:leading-[100%] text-light-foreground">
+            <h2 className="text-md xxl:text-2xl xxl:leading-[1] text-light-foreground">
               Find us on
             </h2>
             {socialLinks?.map((link, index) => (

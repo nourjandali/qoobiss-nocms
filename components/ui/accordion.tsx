@@ -41,7 +41,7 @@ type AccordionTriggerProps = React.ComponentPropsWithoutRef<
   icon?: React.ReactNode;
 };
 const defaultIcon = (
-  <RxChevronDown className="size-7 shrink-0 text-text-primary transition-transform duration-300 md:size-8" />
+  <RxChevronDown className="size-7 shrink-0 text-electric-violet transition-transform duration-300 md:size-8" />
 );
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
