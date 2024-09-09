@@ -144,8 +144,8 @@ export const Navbar = (props: NavbarProps) => {
 export const NavbarDefaults: NavbarProps = {
   logo: {
     url: "/",
-    src: "/logo.svg",
-    alt: "Logo image",
+    src: "/qoobiss.svg",
+    alt: "Qoobiss logo",
   },
   navLinks: [
     { title: "Home", url: "/" },
