@@ -80,11 +80,7 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
   const celebrate = () => {
     setShowConfetti(true);
     toast({
-      title: (
-        <div className="flex items-center gap-2">
-          Success! <PartyPopper className="size-5 text-yellow-500" />
-        </div>
-      ),
+      title: "Success!", // Simple string
       description: "Thanks for reaching out! We'll get back to you soon.",
       className: "bg-white text-light-foreground border-none",
     });
