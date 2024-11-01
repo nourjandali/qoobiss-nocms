@@ -11,6 +11,7 @@ import {
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import Autoplay from "embla-carousel-autoplay";
 import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
+import Link from "next/link";
 
 type ImageProps = {
   src: string;
@@ -58,9 +59,11 @@ export const LightFeature = (props: LightFeatureProps) => {
               <div className="lg:w-1/2">
                 <p className="text-light-chapeau">{description}</p>
                 <div className="py-12 flex lg:justify-normal justify-center items-center gap-4 lg:mt-[30px]">
-                  <Button {...button} className="px-[30px] py-[15px]">
-                    {button.title}
-                  </Button>
+                  <Link href="/partner-with-us">
+                    <Button {...button} className="px-[30px] py-[15px]">
+                      {button.title}
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

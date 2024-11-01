@@ -159,7 +159,6 @@ export const ProductsDefaults: ProductsProps = {
         {
           title: "Find out more",
           variant: "indigo",
-          size: "lg",
           href: "origin",
         },
       ],
@@ -175,7 +174,6 @@ export const ProductsDefaults: ProductsProps = {
         {
           title: "Find out more",
           variant: "indigo",
-          size: "lg",
           href: "ontrace",
         },
       ],
@@ -191,7 +189,6 @@ export const ProductsDefaults: ProductsProps = {
         {
           title: "Find out more",
           variant: "indigo",
-          size: "lg",
           href: "omnicheck",
         },
       ],

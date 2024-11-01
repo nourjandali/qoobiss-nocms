@@ -3,6 +3,7 @@
 import React from "react";
 import { Button, type ButtonProps } from "@/components/ui/button";
 import { StaggeredHeading } from "../ui/word-curtain";
+import Link from "next/link";
 
 type Image = {
   src: string;
@@ -48,9 +49,11 @@ export const AboutUs = (props: AboutUsProps) => {
               alt={image.alt}
               className="w-full rounded-lg lg:mb-12"
             />
-            <Button {...button} className="lg:flex hidden">
-              {button.title}
-            </Button>
+            <Link href="/partner-with-us">
+              <Button {...button} className="lg:flex hidden">
+                {button.title}
+              </Button>
+            </Link>
           </div>
           <div className="lg:w-[35%]">
             {stats.map((stat, index) => (
@@ -59,9 +62,11 @@ export const AboutUs = (props: AboutUsProps) => {
           </div>
 
           <div className="lg:hidden items-center justify-center text-center flex w-full mt-14 lg:mt-0">
-            <Button {...button} className="px-[30px] py-[15px]">
-              {button.title}
-            </Button>
+            <Link href="/partner-with-us">
+              <Button {...button} className="px-[30px] py-[15px]">
+                {button.title}
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -89,7 +94,7 @@ export const AboutUsDefaults: AboutUsProps = {
     alt: "Q's image",
   },
   button: {
-    title: "More about us",
+    title: "Let's talk",
     variant: "light-default",
     size: "default",
   },

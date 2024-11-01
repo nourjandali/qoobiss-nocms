@@ -3,6 +3,7 @@
 
 import { Button, type ButtonProps } from "@/components/ui/button";
 import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
+import Link from "next/link";
 
 type ImageProps = {
   src: string;
@@ -41,9 +42,11 @@ export const DarkFeature = (props: DarkFeatureProps) => {
             </AnimateHeading>
             <p className="lg:text-lg text-dark-chapeau">{description}</p>
             <div className="mt-12 flex items-center gap-x-4 lg:mt-10 justify-center lg:justify-normal">
-              <Button {...button} className="px-[30px] py-[15px]">
-                {button.title}
-              </Button>
+              <Link href="/products">
+                <Button {...button} className="px-[30px] py-[15px]">
+                  {button.title}
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="grid w-full auto-cols-fr grid-cols-1 gap-y-5 lg:gap-y-12 lg:grid-cols-2 lg:gap-5">

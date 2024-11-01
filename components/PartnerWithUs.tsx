@@ -8,7 +8,6 @@ import { Input } from "./ui/input";
 import { useToast } from "@/hooks/use-toast";
 import ReactConfetti from "react-confetti";
 import { useWindowSize } from "react-use";
-import { PartyPopper } from "lucide-react";
 import { StaggeredHeading } from "./ui/word-curtain";
 
 type InputField = {
