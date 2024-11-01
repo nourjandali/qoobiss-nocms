@@ -15,6 +15,7 @@ const buttonVariants = cva(
           "border-2 border-light-border text-light-foreground bg-transparent",
         "primary-dark": "bg-white text-dark-indigo",
         indigo: "bg-glassy text-white text-md font-extrabold",
+        link: "border-0 bg-transparent text-inherit",
       },
       size: {
         default: "rounded-[85px] px-10 py-5 font-semibold",
