@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/Navbar";
 import { Sora as FontSans } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -23,11 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("font-sans antialiased", fontSans.variable)}>
-        <div>
+        <main>
           <Navbar />
           {children}
           <Footer />
-        </div>
+        </main>
+        <Toaster />
       </body>
     </html>
   );

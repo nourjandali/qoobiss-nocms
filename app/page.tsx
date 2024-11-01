@@ -14,7 +14,6 @@ export default function Home() {
       <DarkFeature />
       <LightFeature />
       <Faq />
-      <Certification />
       <GetInTouch />
     </main>
   );

@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
 import { Button, type ButtonProps } from "@/components/ui/button";
+import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
 
 type ImageProps = {
   src: string;
@@ -31,11 +34,11 @@ export const DarkFeature = (props: DarkFeatureProps) => {
   return (
     <section className="pt-6 pb-20 lg:pt-40 lg:pb-20 bg-dark-background relative">
       <div className="container container-padding">
-        <div className="grid auto-cols-fr grid-cols-1 items-start justify-start gap-y-12 lg:grid-cols-[0.35fr_1fr] lg:gap-x-12 lg:gap-y-16 lg:gap-x-20">
+        <div className="grid auto-cols-fr grid-cols-1 items-start justify-start gap-y-12 lg:grid-cols-[0.35fr_1fr] lg:gap-y-16 lg:gap-x-20">
           <div className="w-full lg:w-[85%]">
-            <h1 className="mb-6 lg:mb-5 lg:text-2xl text-gradient">
+            <AnimateHeading className="mb-6 lg:mb-5 lg:text-2xl text-gradient">
               {heading}
-            </h1>
+            </AnimateHeading>
             <p className="lg:text-lg text-dark-chapeau">{description}</p>
             <div className="mt-12 flex items-center gap-x-4 lg:mt-10 justify-center lg:justify-normal">
               <Button {...button} className="px-[30px] py-[15px]">
@@ -53,12 +56,12 @@ export const DarkFeature = (props: DarkFeatureProps) => {
                     alt={DarkFeature.icon.alt}
                   />
                 </div>
-                <h2 className="mb-6 text-2xl lg:mb-8 lg:text-4xl lg:leading-[1.2] text-dark-foreground">
+                <StaggeredHeading className="mb-6 text-2xl lg:mb-8 lg:text-4xl lg:leading-[1.2] text-dark-foreground">
                   {DarkFeature.heading}
-                </h2>
-                <p className="text-dark-chapeau text-sm leading-[1.3]">
+                </StaggeredHeading>
+                <AnimateHeading className="text-dark-chapeau text-sm leading-[1.3]">
                   {DarkFeature.description}
-                </p>
+                </AnimateHeading>
               </div>
             ))}
           </div>
@@ -71,8 +74,8 @@ export const DarkFeature = (props: DarkFeatureProps) => {
 export const DarkFeatureDefaults: DarkFeatureProps = {
   heading: "Adapt your business to the fast moving digital reality.",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-  button: { title: "Discover our products", variant: "dark-default" },
+    "Embracing automation and digitalization is no longer optional—it’s essential. As technology rapidly advances, businesses must adapt to stay competitive and relevant.",
+  button: { title: "Discover new solutions ", variant: "dark-default" },
   DarkFeatures: [
     {
       icon: {
@@ -81,7 +84,7 @@ export const DarkFeatureDefaults: DarkFeatureProps = {
       },
       heading: "Seamless integration",
       description:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. ",
+        "Quickly integrate with existing systems, ensuring smooth and efficient adoption. Our solutions fit effortlessly into your technology landscape, minimizing disruption and accelerating deployment.",
     },
     {
       icon: {
@@ -90,25 +93,25 @@ export const DarkFeatureDefaults: DarkFeatureProps = {
       },
       heading: "Easy scalability",
       description:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+        "Expand your operations to accommodate growing demands without complexity. Our digital tools  support your growth ambitions, accommodating increased volumes and new business opportunities with ease.",
     },
     {
       icon: {
-        src: "/secure.svg",
-        alt: "Secure icon",
+        src: "/workflow.svg",
+        alt: "Workflow icon",
       },
-      heading: "Secure",
+      heading: "Workflow automation",
       description:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+        "Streamline various business processes, reducing manual effort and increasing efficiency. Automate tasks from customer onboarding to financial operations, freeing up resources to focus on strategic initiatives",
     },
     {
       icon: {
-        src: "/internal-dev.svg",
+        src: "/universal.svg",
         alt: "Internal dev icon",
       },
-      heading: "No need of internal dev",
+      heading: "Universal business fit",
       description:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+        "Designed to adapt seamlessly across any industry or country, ensuring a perfect fit. Qoobiss solutions are crafted to meet the unique challenges and requirements of your business, regardless of your operational environment.",
     },
   ],
 };

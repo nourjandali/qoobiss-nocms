@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/button";
 import clsx from "clsx";
 import Link from "next/link";
+import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
 
 type ButtonProps = OriginalButtonProps & {
   href?: string;
@@ -91,10 +92,10 @@ export const Products = (props: ProductsProps) => {
                       top: `${activeSection * 25}%`,
                     }}
                   />
-                  <h1 className="text-gradient text-8xl lg:text-[100px] font-light mb-4">
+                  <AnimateHeading className="text-gradient text-8xl lg:text-[100px] font-semibold mb-4">
                     {content.title}
-                  </h1>
-                  <h2 className="text-4xl lg:text-8xl lg:font-light tracking-tight mb-6">
+                  </AnimateHeading>
+                  <AnimateHeading className="text-4xl lg:text-8xl lg:font-light tracking-tight mb-6">
                     <span className="text-gradient">
                       {content.unColoredHeadingOne}
                     </span>{" "}
@@ -104,10 +105,10 @@ export const Products = (props: ProductsProps) => {
                     <span className="text-gradient">
                       {content.unColoredHeadingTwo}
                     </span>
-                  </h2>
-                  <p className="text-gradient lg:text-dark-chapeau max-w-lg mb-8">
+                  </AnimateHeading>
+                  <AnimateHeading className="text-gradient lg:text-dark-chapeau max-w-lg mb-8">
                     {content.description}
-                  </p>
+                  </AnimateHeading>
                   <div className="flex gap-x-4">
                     {content.buttons.map(
                       (button, buttonIndex) =>
@@ -148,50 +149,50 @@ export const Products = (props: ProductsProps) => {
 export const ProductsDefaults: ProductsProps = {
   contents: [
     {
-      title: "Q-Biz",
-      unColoredHeadingOne: "Automated",
-      coloredHeading: "Contract Management",
-      unColoredHeadingTwo: "System",
+      title: "Origin",
+      unColoredHeadingOne: "Orchestrate your",
+      coloredHeading: "clients’ journey",
+      unColoredHeadingTwo: "digitally",
       description:
-        "Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor dictum risus vel vulputate. Sed lacinia, velit ac accumsan tempus, augue nisl mollis felis, eu pretium mauris nulla id nunc.",
+        "Transform your client-facing operations into automated customized digital workflows. Digitalize the entire end-to-end client journey across any industry. Create, streamline and run efficient digital workflows in days, not months—without writing a single line of code.",
       buttons: [
         {
           title: "Find out more",
           variant: "indigo",
           size: "lg",
-          href: "q-biz",
+          href: "origin",
         },
       ],
     },
     {
-      title: "Q-Identify",
-      unColoredHeadingOne: "Automated",
-      coloredHeading: "Contract Management",
-      unColoredHeadingTwo: "System",
+      title: "Ontrace",
+      unColoredHeadingOne: "Welcome",
+      coloredHeading: "verified clients",
+      unColoredHeadingTwo: "instantly",
       description:
-        "Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor dictum risus vel vulputate. Sed lacinia, velit ac accumsan tempus, augue nisl mollis felis, eu pretium mauris nulla id nunc.",
+        "Digitalize all customer identification processes with minimal development effort. Our scalable solution effortlessly accommodates growing customer volumes, ensuring compliance and fraud prevention while achieving complete automation to streamline operations.",
       buttons: [
         {
           title: "Find out more",
           variant: "indigo",
           size: "lg",
-          href: "q-identify",
+          href: "ontrace",
         },
       ],
     },
     {
-      title: "Q-AML",
-      unColoredHeadingOne: "Automated",
-      coloredHeading: "Contract Management",
-      unColoredHeadingTwo: "System",
+      title: "Omnicheck",
+      unColoredHeadingOne: "",
+      coloredHeading: "Smart Screening",
+      unColoredHeadingTwo: "for the future",
       description:
-        "Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor dictum risus vel vulputate. Sed lacinia, velit ac accumsan tempus, augue nisl mollis felis, eu pretium mauris nulla id nunc.",
+        "Streamline your compliance process with an automated AML solution verification and monitorization of natural & legal persons. Easility Navigate complex AML compliance challenges of your contractual  customer relationship  and integrate critical AML checks within your core business operations, enhancing both compliance and operational efficiency.",
       buttons: [
         {
           title: "Find out more",
           variant: "indigo",
           size: "lg",
-          href: "q-aml",
+          href: "omnicheck",
         },
       ],
     },

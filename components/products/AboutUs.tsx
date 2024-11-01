@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import React from "react";
 import { Button, type ButtonProps } from "@/components/ui/button";
+import { StaggeredHeading } from "../ui/word-curtain";
 
 type Image = {
   src: string;
@@ -35,12 +37,12 @@ export const AboutUs = (props: AboutUsProps) => {
       <div className="container container-padding">
         <div className="flex flex-col lg:flex-row justify-between items-start">
           <div className="lg:w-1/2 mb-8 lg:mb-0">
-            <p className="font-semibold uppercase text-sm text-electric-violet mb-8">
+            <StaggeredHeading className="font-semibold uppercase text-sm text-electric-violet mb-8">
               {tagline}
-            </p>
-            <h1 className="text-light-foreground text-4xl lg:font-light lg:text-11xl mb-8">
+            </StaggeredHeading>
+            <StaggeredHeading className="text-light-foreground text-4xl lg:font-light lg:text-11xl mb-8">
               {title}
-            </h1>
+            </StaggeredHeading>
             <img
               src={image.src}
               alt={image.alt}
@@ -70,18 +72,18 @@ export const AboutUs = (props: AboutUsProps) => {
 export const Stat = ({ value, label, description }: StatProps) => {
   return (
     <div className="mb-8">
-      <div className="text-[100px] lg:text-[140px] leading-[1.3] font-extralight text-light-foreground">
+      <StaggeredHeading className="text-[100px] lg:text-[140px] leading-[1.3] font-extralight text-light-foreground">
         {value}
-      </div>
-      <div className="text-2xl mb-4">{label}</div>
+      </StaggeredHeading>
+      <StaggeredHeading className="text-2xl mb-4">{label}</StaggeredHeading>
       <p className="text-light-chapeau leading-[1.4] lg:w-1/2">{description}</p>
     </div>
   );
 };
 
 export const AboutUsDefaults: AboutUsProps = {
-  tagline: "ABOUT US",
-  title: "Lorem ipsum dolor sit amet consectetur",
+  tagline: "NUMBERS AT A GLANCE",
+  title: "Experience the power of efficiency",
   image: {
     src: "/q-image.png",
     alt: "Q's image",
@@ -93,22 +95,22 @@ export const AboutUsDefaults: AboutUsProps = {
   },
   stats: [
     {
-      value: "2016",
-      label: "Founded",
+      value: "75%",
+      label: "Less time on overhead coding",
       description:
-        "Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor dictum risus vel vulputate. Sed lacinia, velit ac accumsan tempus.",
+        "This reduction means your teams can focus more on critical tasks such as innovation and problem-solving rather than being consumed by routine coding work  for developming  new solutions.",
     },
     {
-      value: "7+",
-      label: "Solutions launched",
+      value: "57%",
+      label: "Faster to market",
       description:
-        "Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor dictum risus vel vulputate. Sed lacinia, velit ac accumsan tempus.",
+        "By automating and optimizing key processes, our solution enables businesses to accelerate product launches and updates, swiftly responding to market demands and customer needs. This efficiency also ensures that you remain competitive and aligned with evolving industry trends.",
     },
     {
-      value: "2+",
-      label: "Countries",
+      value: "30%",
+      label: "Resources savings",
       description:
-        "Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor dictum risus vel vulputate. Sed lacinia, velit ac accumsan tempus.",
+        "Digitalized workflows and automated processes reduce manual tasks, allowing your team to focus on strategic initiatives rather than routine operations. Your business can do more with less time, maximizing productivity and minimizing unnecessary costs.",
     },
   ],
 };

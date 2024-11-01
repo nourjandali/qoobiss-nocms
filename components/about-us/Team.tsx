@@ -1,3 +1,6 @@
+"use client";
+import { StaggeredHeading } from "../ui/word-curtain";
+
 /* eslint-disable @next/next/no-img-element */
 type ImageProps = {
   src: string;
@@ -29,13 +32,13 @@ export const Team = (props: TeamProps) => {
     <section className="pt-20 lg:pt-40">
       <div className="container container-padding flex flex-col gap-6 lg:gap-16">
         <div className="flex flex-col items-start gap-6">
-          <p className="font-semibold uppercase text-sm text-electric-violet">
+          <StaggeredHeading className="font-semibold uppercase text-sm text-electric-violet">
             {tagline}
-          </p>
+          </StaggeredHeading>
           <div className="max-w-lg w-full">
-            <h1 className="text-light-foreground text-4xl lg:font-light lg:text-8xl">
+            <StaggeredHeading className="text-light-foreground text-4xl lg:font-light lg:text-8xl">
               {heading}
-            </h1>
+            </StaggeredHeading>
           </div>
         </div>
 
@@ -50,9 +53,9 @@ export const Team = (props: TeamProps) => {
                 />
               </div>
               <div className="flex flex-col gap-2 lg:gap-4 bg-white/40 p-6 lg:p-10 rounded-b-2xl">
-                <h2 className="text-light-foreground lg:text-2xl">
+                <h1 className="text-light-foreground lg:text-2xl">
                   {member.name}
-                </h2>
+                </h1>
                 <p className="text-sm text-light-chapeau">{member.jobTitle}</p>
               </div>
             </div>
@@ -64,8 +67,8 @@ export const Team = (props: TeamProps) => {
 };
 
 export const TeamDefaults: TeamProps = {
-  tagline: "Our Team",
-  heading: "Lorem ipsum dolor sit amet consectetur",
+  tagline: "The team",
+  heading: "Meet the team who’s behind the magic. ",
   teamMembers: [
     {
       image: {

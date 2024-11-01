@@ -4,6 +4,8 @@
 import { RxArrowRight } from "react-icons/rx";
 import { Button } from "./ui/button";
 import { Banner } from "./Banner";
+import React from "react";
+import { StaggeredHeading } from "./ui/word-curtain";
 
 type Position = {
   title: string;
@@ -12,7 +14,7 @@ type Position = {
 
 type Props = {
   heading: string;
-  description: string;
+  children: React.ReactNode;
   positions: Position[];
 };
 
@@ -20,7 +22,7 @@ export type CareersProps = React.ComponentPropsWithoutRef<"section"> &
   Partial<Props>;
 
 export const Careers = (props: CareersProps) => {
-  const { heading, description, positions } = {
+  const { heading, children, positions } = {
     ...CareersDefaults,
     ...props,
   } as Props;
@@ -31,32 +33,19 @@ export const Careers = (props: CareersProps) => {
       <div className="pt-20 lg:pt-40">
         <div className="container container-padding">
           <div className="flex py-5 flex-col items-center gap-6 self-stretch lg:grid lg:grid-cols-2 lg:gap-20">
-            <h2 className="text-light-foreground text-center self-stretch text-4xl lg:font-light lg:text-8xl lg:text-left">
-              Lorem ipsum dolor sit amet consectetur
-            </h2>
+            <StaggeredHeading className="text-light-foreground text-center self-stretch text-4xl lg:font-light lg:text-8xl lg:text-left">
+              {heading}
+            </StaggeredHeading>
             <p className="self-stretch text-light-foreground text-sm lg:text-lg text-center lg:text-left">
-              <span>
-                Quisque at metus egestas, tempor odio nec, fringilla risus.
-                Morbi tempor dictum risus vel vulputate. Sed lacinia, velit ac
-                accumsan tempus, augue nisl mollis felis, eu pretium mauris
-                nulla id nunc.
-              </span>
-              <br />
-              <br />
-              <span>
-                Donec varius maximus metus in volutpat. Maecenas rhoncus orci
-                felis, ut faucibus est efficitur at. Pellentesque tempor ornare
-                suscipit. Nulla molestie laoreet justo, at fermentum odio
-                ultricies nec. Proin faucibus efficitur hendrerit.
-              </span>
+              {children}
             </p>
           </div>
 
           <div className="pt-20 lg:pt-40">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-20">
-              <h3 className="text-4xl lg:text-8xl lg:font-light text-light-foreground">
+              <StaggeredHeading className="text-4xl lg:text-8xl lg:font-light text-light-foreground">
                 Available positions
-              </h3>
+              </StaggeredHeading>
               <div className="flex flex-col items-start gap-2.5 flex-shrink-0">
                 {positions.map((position, index) => (
                   <div
@@ -96,6 +85,23 @@ export const Careers = (props: CareersProps) => {
 };
 
 export const CareersDefaults: CareersProps = {
+  heading: "Let’s innovate together",
+  children: (
+    <React.Fragment>
+      <span>
+        At Qoobiss, we believe that innovators are the catalysts for positive
+        change, making the world both better and more intriguing.
+      </span>
+      <br />
+      <br />
+      <span>
+        If you are an explorer at heart, thrive on challenging the status quo,
+        and relish in overcoming challenges, then Qoobiss is the perfect place
+        for you. We are looking for passionate individuals who are ready to push
+        boundaries and revolutionize industries.
+      </span>
+    </React.Fragment>
+  ),
   positions: [
     {
       title: "Lorem ipsum dolor sit amet",

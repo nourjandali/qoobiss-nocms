@@ -1,5 +1,5 @@
+"use client";
 import { Button, type ButtonProps } from "../ui/button";
-
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 import { Plus } from "lucide-react";
+import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
 
 type QuestionsProps = {
   title: string;
@@ -37,9 +38,9 @@ export const Faq = (props: FaqProps) => {
             <p className="mb-3 font-semibold lg:mb-4 uppercase text-sm leading-[1.3] text-electric-violet">
               {tagline}
             </p>
-            <h1 className="text-5xl font-light lg:mb-6 lg:text-8xl">
+            <StaggeredHeading className="text-5xl font-light lg:mb-6 lg:text-8xl">
               {heading}
-            </h1>
+            </StaggeredHeading>
             <div className="lg:mt-8 lg:flex hidden">
               <Button {...button}>{button.title}</Button>
             </div>
@@ -80,26 +81,31 @@ export const FaqDefaults: FaqProps = {
   questions: [
     {
       title:
-        "Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor dictum risus vel vulputate?",
+        "How quickly can we integrate Qoobiss solutions into our existing systems?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "Qoobiss solutions are designed for easy and rapid integration, seamlessly fitting into your existing workflows with minimal disruption. You can expect to have our systems fully operational in days, not months, ensuring a hassle-free setup without extensive development efforts.",
     },
     {
-      title: "Maecenas rhoncus orci felis, ut faucibus?",
+      title: "What makes Qoobiss solutions essential for modern businesses?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "Automating your processes with Qoobiss enhances efficiency, reduces operational costs, and minimizes human error. Automation streamlines your business operations, allowing your team to focus on strategic tasks and innovation.",
+    },
+    {
+      title: "Can Qoobiss solutions scale with my business growth?",
+      answer:
+        "Absolutely. Our solutions are built to scale seamlessly as your business grows. They can accommodate an increasing influx of customers effortlessly, without the need for additional resources, ensuring that your capacity to serve new markets and customer segments expands smoothly.",
     },
     {
       title:
-        "Donec varius maximus metus in volutpat. Maecenas rhoncus orci felis, ut?",
+        "What are the immediate cost benefits of implementing Qoobiss solutions?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "Implementing Qoobiss solutions leads to immediate cost savings by significantly reducing manual tasks and associated operational expenses. This streamlined approach enhances productivity and efficiency, directly impacting your bottom line positively.",
     },
     {
       title:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua?",
+        "How does Qoobiss ensure compliance and fraud prevention in customer identification?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "Our solutions integrate advanced AI technologies to bring all customer identification processes into a fully digital system. This not only reduces the development effort but also ensures stringent compliance and effective fraud prevention, achieving 100% automation in identity verification.",
     },
   ],
   buttonMobile: {

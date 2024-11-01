@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
+
+"use client";
+
 import Spline from "@splinetool/react-spline/next";
 import clsx from "clsx";
+import { AnimateHeading, StaggeredHeading } from "../ui/word-curtain";
 
 type Props = {
-  headingFirstPart: string;
   coloredHeading: string;
-  headingLastPart: string;
+  heading: string;
   description: string;
 };
 
@@ -13,7 +16,7 @@ export type HeaderProps = React.ComponentPropsWithoutRef<"section"> &
   Partial<Props>;
 
 export const Header = (props: HeaderProps) => {
-  const { headingFirstPart, coloredHeading, headingLastPart, description } = {
+  const { coloredHeading, heading, description } = {
     ...HeaderDefaults,
     ...props,
   } as Props;
@@ -27,22 +30,38 @@ export const Header = (props: HeaderProps) => {
       )}
     >
       <Spline
-        scene="https://prod.spline.design/o55RcWIPN3C1LKhi/scene.splinecode"
+        scene="https://prod.spline.design/EnrrqgBMC0Dgrjos/scene.splinecode"
         className="absolute inset-0 size-full hidden lg:block"
       />
-      <div className="container container-padding">
+      <div className="container container-padding bg-dark-background">
         <div className="pt-20 lg:py-48">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-5">
             <div className="z-10">
               <h1 className="mb-5 text-8xl font-light md:mb-6 lg:text-[100px]">
-                <span className="text-gradient">{headingFirstPart}</span>{" "}
-                <span className="text-accent">{coloredHeading}</span>{" "}
-                <span className="text-gradient">{headingLastPart}</span>
+                <StaggeredHeading
+                  wordClassName="text-accent"
+                  baseDelay={0.2}
+                  staggerChildren={0.15}
+                >
+                  {coloredHeading}
+                </StaggeredHeading>
+                <StaggeredHeading
+                  wordClassName="text-gradient"
+                  baseDelay={0.5}
+                  staggerChildren={0.15}
+                >
+                  {heading}
+                </StaggeredHeading>
               </h1>
-              <p className="text-2xl text-gradient">{description}</p>
-              <button className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5">
-                <ArrowDown />
-              </button>
+              <AnimateHeading delay={1}>
+                <p className="text-2xl text-gradient">{description}</p>
+              </AnimateHeading>
+
+              <AnimateHeading delay={1.2}>
+                <button className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5">
+                  <ArrowDown />
+                </button>
+              </AnimateHeading>
             </div>
             <div className="hidden lg:flex" />
           </div>
@@ -67,11 +86,10 @@ export const Header = (props: HeaderProps) => {
 };
 
 export const HeaderDefaults: HeaderProps = {
-  headingFirstPart: "No-code,",
-  coloredHeading: "perfectly fitted",
-  headingLastPart: "digitalisation",
+  coloredHeading: "Digital transformation",
+  heading: "accessible to everyone",
   description:
-    "Automate your onboarding and contracting processes through our customized solutions for a seamless customer experience.",
+    "Grow the power of automation with our modern tools and enhance customer relationships at every touchpoint.",
 };
 
 const ArrowDown = () => (

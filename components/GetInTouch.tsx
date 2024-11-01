@@ -31,7 +31,7 @@ export const GetInTouch = (props: GetInTouchProps) => {
               <span className="text-gradient lg:hidden">touch</span>
               <div className="flex items-center lg:justify-normal justify-center lg:gap-2">
                 <span className="text-accent hidden lg:block">touch</span>
-                <a className="mt-8 lg:mt-0" href="#">
+                <a className="mt-8 lg:mt-0" href="/partner-with-us">
                   <CtaIcon />
                 </a>
               </div>

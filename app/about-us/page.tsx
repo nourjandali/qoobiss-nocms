@@ -9,7 +9,7 @@ import { GetInTouch } from "@/components/GetInTouch";
 export default function Home() {
   return (
     <main>
-      <Banner title="About us" />
+      <Banner title="Innovation is bliss." />
       <Hero />
       <FeatureOne />
       <FeatureTwo />

@@ -8,18 +8,17 @@ type ImageProps = {
 };
 
 type Links = {
-  title: string;
   url: string;
+  subTitle: string;
 };
 
-type ColumnLinks = {
+type Content = {
   title: string;
   links: Links[];
 };
 
 type Props = {
-  columnLinks: ColumnLinks[];
-  footerText?: string;
+  contents: Content[];
   officeAddress?: string[];
   contactInfo?: {
     phone: string;
@@ -29,9 +28,22 @@ type Props = {
     platform: string;
     url: string;
   }[];
+  logo?: ImageProps;
+  mainHeadingText?: string;
+  ellipseImages?: {
+    desktopSrc: string;
+    mobileSrc: string;
+    alt: string;
+  };
   copyrightText?: string;
-  termsUrl?: string;
-  privacyUrl?: string;
+  termsUrl?: {
+    url: string;
+    title: string;
+  };
+  privacyUrl?: {
+    url: string;
+    title: string;
+  };
 };
 
 export type FooterProps = React.ComponentPropsWithoutRef<"section"> &
@@ -39,11 +51,12 @@ export type FooterProps = React.ComponentPropsWithoutRef<"section"> &
 
 export const Footer = (props: FooterProps) => {
   const {
-    columnLinks,
-    footerText,
+    contents,
     officeAddress,
     contactInfo,
     socialLinks,
+    logo,
+    mainHeadingText,
     copyrightText,
     termsUrl,
     privacyUrl,
@@ -56,27 +69,30 @@ export const Footer = (props: FooterProps) => {
     <footer className="pb-4 lg:pb-0 pt-20 lg:pt-28 relative">
       <div className="container container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-[0.35fr_1fr] lg:mb-20">
-          <img src="/footer-qoobiss.svg" alt="qoobiss logo" />
+          <img
+            src={logo?.src || "/footer-qoobiss.svg"}
+            alt={logo?.alt || "qoobiss logo"}
+          />
           <h1 className="text-4xl lg:text-[80px] text-light-foreground font-normal lg:font-light my-8 lg:my-0">
-            Innovation is bliss.
+            {mainHeadingText || "Innovation is bliss."}
           </h1>
         </div>
-        <div className="grid grid-cols-1 items-start gap-x-8 gap-y-10 md:grid-cols-3 md:gap-y-12 lg:grid-cols-4">
-          {columnLinks.map((column, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-start justify-start"
-            >
-              <ul className="flex flex-col gap-2 xxl:gap-4">
-                {column.links.map((link, linkIndex) => (
-                  <li
-                    key={linkIndex}
-                    className="text-md xxl:text-2xl text-light-foreground"
-                  >
-                    <a href={link.url}>{link.title}</a>
-                  </li>
-                ))}
-              </ul>
+
+        <div className="grid grid-cols-1 items-start gap-x-8 gap-y-10 md:grid-cols-3 md:gap-y-12 lg:grid-cols-5">
+          {contents.map((content, index) => (
+            <div key={index}>
+              <h2 className="text-md xxl:text-2xl text-light-foreground">
+                {content.title}
+              </h2>
+              {content.links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  className="text-light-chapeau text-sm mt-2.5 block"
+                >
+                  {link.subTitle}
+                </a>
+              ))}
             </div>
           ))}
 
@@ -120,11 +136,11 @@ export const Footer = (props: FooterProps) => {
             <a href="#" className="text-[#4F4E7A] text-xs">
               {copyrightText}
             </a>
-            <a href={termsUrl} className="text-[#4F4E7A] text-xs">
-              Terms And Conditions
+            <a href={termsUrl?.url} className="text-[#4F4E7A] text-xs">
+              {termsUrl?.title}
             </a>
-            <a href={privacyUrl} className="text-[#4F4E7A] text-xs">
-              Privacy Policy
+            <a href={privacyUrl?.url} className="text-[#4F4E7A] text-xs">
+              {privacyUrl?.title}
             </a>
           </div>
         </div>
@@ -144,18 +160,27 @@ export const Footer = (props: FooterProps) => {
 };
 
 export const FooterDefaults: FooterProps = {
-  columnLinks: [
+  contents: [
     {
-      title: "Office",
+      title: "Our Solutions",
       links: [
-        { title: "Products", url: "#" },
-        { title: "Use cases", url: "#" },
-        { title: "About us", url: "#" },
-        { title: "Career", url: "#" },
+        { url: "/products", subTitle: "All products" },
+        { url: "/products/origin", subTitle: "Origin" },
+        { url: "/products/ontrace", subTitle: "Ontrace" },
+        { url: "/products/omnicheck", subTitle: "Omnicheck" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { url: "/about-us", subTitle: "About us" },
+        { url: "/security-and-compliance", subTitle: "Security & Compliance" },
+        { url: "/partner-with-us", subTitle: "Partner with us" },
+        { url: "/careers", subTitle: "Careers" },
+        { url: "/news", subTitle: "News" },
       ],
     },
   ],
-  footerText: "© 2024 Relume. All rights reserved.",
   officeAddress: [
     "Expo Business Park Str. Av.",
     "Popișteanu, nr. 54A, etaj 1 Sector 1,",
@@ -169,9 +194,11 @@ export const FooterDefaults: FooterProps = {
     { platform: "LinkedIn", url: "#" },
     { platform: "Facebook", url: "#" },
   ],
+  logo: { src: "/footer-qoobiss.svg", alt: "qoobiss logo" },
+  mainHeadingText: "Innovation is bliss.",
   copyrightText: "Copyright © All rights reserved 2024",
-  termsUrl: "#",
-  privacyUrl: "#",
+  termsUrl: { url: "#", title: "Terms And Conditions" },
+  privacyUrl: { url: "#", title: "Privacy Policy" },
 };
 
 Footer.displayName = "Footer";

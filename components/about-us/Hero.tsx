@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { StaggeredHeading } from "../ui/word-curtain";
 
 type Props = {
   heading: string;
@@ -20,9 +21,9 @@ export const Hero = (props: HeroProps) => {
     <section className="pt-20 lg:pt-40">
       <div className="container container-padding">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:justify-between lg:gap-20">
-          <h2 className="text-light-foreground text-center text-4xl lg:font-light lg:text-8xl lg:text-left">
+          <StaggeredHeading className="text-light-foreground text-center text-4xl lg:font-light lg:text-8xl lg:text-left">
             {heading}
-          </h2>
+          </StaggeredHeading>
           <div className="text-light-foreground text-sm lg:text-lg text-center lg:text-left">
             {children}
           </div>
@@ -33,20 +34,20 @@ export const Hero = (props: HeroProps) => {
 };
 
 export const HeroDefaults: HeroProps = {
-  heading: "Lorem ipsum dolor sit amet consectetur",
+  heading:
+    "We design modern tools that enable simpler and faster digital transformation.",
   children: (
     <React.Fragment>
       <p>
-        Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor
-        dictum risus vel vulputate. Sed lacinia, velit ac accumsan tempus, augue
-        nisl mollis felis, eu pretium mauris nulla id nunc.
+        Our commitment to delivering secure, reliable, and fully automated
+        solutions ensures that our clients experience effortless and swift
+        digital transitions.
       </p>
       <br />
       <p>
-        Donec varius maximus metus in volutpat. Maecenas rhoncus orci felis, ut
-        faucibus est efficitur at. Pellentesque tempor ornare suscipit. Nulla
-        molestie laoreet justo, at fermentum odio ultricies nec. Proin faucibus
-        efficitur hendrerit.
+        At Qoobiss, innovation is at the heart of everything we do, making
+        digital transformation accessible and efficient for businesses around
+        the world.
       </p>
     </React.Fragment>
   ),

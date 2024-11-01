@@ -21,7 +21,7 @@ const buttonVariants = cva(
         primary: "rounded-[32px] px-[31px] py-[14px]",
         lg: "rounded-[85px] px-[50px] py-[30px]",
         filter: "rounded-[85px] px-10 py-[15px] font-semibold",
-        indigo: "rounded-[85px] py-[20px] px-[40px] lg:py-[30px] lg:px-[50px]",
+        indigo: "rounded-[85px] py-[20px] px-[40px]",
         icon: "h-10 w-10",
       },
     },

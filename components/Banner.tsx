@@ -2,6 +2,7 @@
 "use client";
 
 import clsx from "clsx";
+import { StaggeredHeading } from "./ui/word-curtain";
 
 type Props = {
   title: string;
@@ -23,9 +24,9 @@ export const Banner = (props: BannerProps) => {
         props.className
       )}
     >
-      <h1 className="text-white text-4xl lg:text-11xl lg:font-light z-10 container container-padding">
+      <StaggeredHeading className="text-white text-4xl lg:text-11xl lg:font-light z-10 container container-padding">
         {title}
-      </h1>
+      </StaggeredHeading>
       <div className="absolute z-0 inset-0 pointer-events-none lg:block hidden">
         <img
           src="/banner-ellipse.png"
