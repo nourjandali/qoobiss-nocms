@@ -84,7 +84,7 @@ export const DarkFeature2Defaults: DarkFeature2Props = {
       },
       heading: "Financial Services",
       description:
-        "Automatically open accounts, process applications, applying for loans, and transfer funds to your customers instantly. Our solution streamlines financial operations, ensuring speed and accuracy in every origination process.",
+        "Automatically open accounts, process applications, apply for loans, and easily integrate needed solutions to transfer funds to your customers instantly. Our solution streamlines financial operations, ensuring speed and accuracy in every origination process.",
     },
     {
       icon: {

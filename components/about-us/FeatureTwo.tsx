@@ -69,9 +69,9 @@ const Feature = ({ ...feature }: Feature) => {
 
 export const FeatureTwoDefaults: FeatureTwoProps = {
   tagline: "Our values",
-  heading: "Lorem ipsum dolor sit amet consectetur",
+  heading: "Our Core Values: Empowering Innovation and Excellence",
   description:
-    "Quisque at metus egestas, tempor odio nec, fringilla risus. Morbi tempor dictum risus vel vulputate. Sed lacinia, velit ac accumsan tempus, augue nisl mollis felis, eu pretium mauris nulla id nunc. Donec varius maximus metus in volutpat. Maecenas rhoncus orci felis, ut faucibus est efficitur at. Pellentesque tempor ornare suscipit. Nulla molestie laoreet justo, at fermentum odio ultricies nec. Proin faucibus efficitur hendrerit.",
+    "At Qoobiss, we’re dedicated to transforming challenges into opportunities and innovation. We empower our clients with advanced tools to lead their industries, providing the flexibility to adapt and thrive in a fast-changing world. By simplifying the complex, we make life easier, enabling our clients to focus on what they do best. Join us in redefining what’s possible and achieving new heights together.",
   features: [
     {
       number: "01",

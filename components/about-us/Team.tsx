@@ -49,7 +49,7 @@ export const Team = (props: TeamProps) => {
                 <img
                   src={member.image.src}
                   alt={member.image.alt}
-                  className="size-full object-cover rounded-t-2xl"
+                  className="size-full object-cover rounded-t-2xl aspect-square"
                 />
               </div>
               <div className="flex flex-col gap-2 lg:gap-4 bg-white/40 p-6 lg:p-10 rounded-b-2xl">
@@ -68,65 +68,45 @@ export const Team = (props: TeamProps) => {
 
 export const TeamDefaults: TeamProps = {
   tagline: "The team",
-  heading: "Meet the team who’s behind the magic. ",
+  heading: "Meet our leaders",
   teamMembers: [
     {
       image: {
-        src: "/team-image.png",
-        alt: "Placeholder image 1",
+        src: "/andrei-buzgan.jpg",
+        alt: "Andrei Buzgan",
       },
-      name: "Prenume Nume",
+      name: "Andrei Buzgan",
       jobTitle: "CEO",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
     },
     {
       image: {
-        src: "/team-image.png",
-        alt: "Placeholder image 2",
+        src: "/alexandru-rizea.jpg",
+        alt: "Alexandru Rizea",
       },
-      name: "Prenume Nume",
-      jobTitle: "CEO",
+      name: "Alexandru Rizea",
+      jobTitle: "CTO",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
     },
     {
       image: {
-        src: "/team-image.png",
-        alt: "Placeholder image 3",
+        src: "/adrian-golomoz.jpg",
+        alt: "Adrian Golomoz",
       },
-      name: "Prenume Nume",
-      jobTitle: "CEO",
+      name: "Adrian Golomoz",
+      jobTitle: "CFO",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
     },
     {
       image: {
-        src: "/team-image.png",
-        alt: "Placeholder image 4",
+        src: "/ramona-maria.jpg",
+        alt: "Ramona Maria Voiculescu",
       },
-      name: "Prenume Nume",
-      jobTitle: "CEO",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    },
-    {
-      image: {
-        src: "/team-image.png",
-        alt: "Placeholder image 5",
-      },
-      name: "Prenume Nume",
-      jobTitle: "CEO",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    },
-    {
-      image: {
-        src: "/team-image.png",
-        alt: "Placeholder image 6",
-      },
-      name: "Prenume Nume",
-      jobTitle: "CEO",
+      name: "Ramona Maria Voiculescu",
+      jobTitle: "Business Development Manager",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
     },

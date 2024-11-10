@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import ReactConfetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import { StaggeredHeading } from "./ui/word-curtain";
+import Link from "next/link";
 
 type InputField = {
   placeholder: string;
@@ -16,9 +17,14 @@ type InputField = {
   name: string;
 };
 
+type Items = {
+  title: string;
+  office?: string[];
+};
+
 type InfoSection = {
   title: string;
-  items: string[];
+  items: Items[];
 };
 
 type ImageConfig = {
@@ -32,7 +38,13 @@ type Props = {
   infoSections: InfoSection[];
   form: {
     inputs: InputField[];
-    terms: string;
+    terms: {
+      title: string;
+      link: {
+        text: string;
+        url: string;
+      };
+    };
     submitButton: string;
     formsparkId: string;
   };
@@ -144,12 +156,19 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
                   </StaggeredHeading>
                   <div className="flex flex-col">
                     {section.items.map((item, itemIndex) => (
-                      <StaggeredHeading
+                      <p
                         key={itemIndex}
-                        className="text-light-chapeau text-sm leading-[1.4]"
+                        className="text-light-chapeau text-sm leading-[1.4] flex flex-col"
                       >
-                        {item}
-                      </StaggeredHeading>
+                        <span className="font-semibold first-of-type:mt-4">
+                          {item.title}
+                        </span>
+                        <span className="flex flex-col">
+                          {item?.office?.map((office, officeIndex) => (
+                            <span key={officeIndex}>{office}</span>
+                          ))}
+                        </span>
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -172,7 +191,7 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
               ))}
             </div>
 
-            <div className="flex items-start gap-5 py-3.5">
+            <div className="flex items-center gap-5 py-3.5">
               <Checkbox
                 id="terms"
                 checked={agreedToTerms}
@@ -181,7 +200,10 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
                 }
               />
               <label htmlFor="terms" className="text-sm text-light-chapeau">
-                {form.terms}
+                {form.terms.title}
+                <Link href={form.terms.link.url} className="underline">
+                  {form.terms.link.text}
+                </Link>
               </label>
             </div>
 
@@ -223,14 +245,31 @@ export const PartnerWithUsDefaults: PartnerWithUsProps = {
     {
       title: "Office",
       items: [
-        "Expo Business Park",
-        "Str. Av. Popișteanu, nr. 54A, etaj 1",
-        "Sector 1, București",
+        {
+          title: "Working Point Address",
+          office: [
+            "Expo Business Park",
+            "54A Av. Popisteanu Street, 1st floor,",
+            "Bucharest, Romania",
+          ],
+        },
+        {
+          title: "Registered Address",
+          office: [
+            "Admax Center Building",
+            "1/i Bld Pipera Street, office 6, 3rd  floor,",
+            "Voluntari, Ilfov County, Romania",
+          ],
+        },
       ],
     },
     {
       title: "Contact",
-      items: ["+40 123 456 789", "contact@qoobiss.com"],
+      items: [
+        {
+          title: "sales@qoobiss.com",
+        },
+      ],
     },
   ],
   form: {
@@ -243,8 +282,13 @@ export const PartnerWithUsDefaults: PartnerWithUsProps = {
       { placeholder: "Language", name: "Language" },
       { placeholder: "Message", name: "Message" },
     ],
-    terms:
-      "Lorem ipsum dolor sit amet consectetur. Sed et posuere vulputate orci ut est laoreet. Ornare et urna tellus porttitor adipiscing mattis non consequat tristique. Vitae mi faucibus vel et.",
+    terms: {
+      title: "I have read and agree with our ",
+      link: {
+        text: "Privacy Policy",
+        url: "/privacy-policy",
+      },
+    },
     submitButton: "Send",
   },
   images: {

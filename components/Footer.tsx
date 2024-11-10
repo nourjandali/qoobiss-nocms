@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button, type ButtonProps } from "@/components/ui/button";
+import Link from "next/link";
 
 type ImageProps = {
   url?: string;
@@ -21,7 +22,6 @@ type Props = {
   contents: Content[];
   officeAddress?: string[];
   contactInfo?: {
-    phone: string;
     email: string;
   };
   socialLinks?: {
@@ -44,6 +44,10 @@ type Props = {
     url: string;
     title: string;
   };
+  cookiesUrl?: {
+    url: string;
+    title: string;
+  };
 };
 
 export type FooterProps = React.ComponentPropsWithoutRef<"section"> &
@@ -60,6 +64,7 @@ export const Footer = (props: FooterProps) => {
     copyrightText,
     termsUrl,
     privacyUrl,
+    cookiesUrl,
   } = {
     ...FooterDefaults,
     ...props,
@@ -69,10 +74,12 @@ export const Footer = (props: FooterProps) => {
     <footer className="pb-4 lg:pb-0 pt-20 lg:pt-28 relative">
       <div className="container container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-[0.35fr_1fr] lg:mb-20">
-          <img
-            src={logo?.src || "/footer-qoobiss.svg"}
-            alt={logo?.alt || "qoobiss logo"}
-          />
+          <Link href="/">
+            <img
+              src={logo?.src || "/footer-qoobiss.svg"}
+              alt={logo?.alt || "qoobiss logo"}
+            />
+          </Link>
           <h1 className="text-4xl lg:text-[80px] text-light-foreground font-normal lg:font-light my-8 lg:my-0">
             {mainHeadingText || "Innovation is bliss."}
           </h1>
@@ -111,7 +118,6 @@ export const Footer = (props: FooterProps) => {
             <h2 className="text-md xxl:text-2xl text-light-foreground">
               Contact
             </h2>
-            <p className="text-light-chapeau text-sm">{contactInfo?.phone}</p>
             <p className="text-light-chapeau text-sm">{contactInfo?.email}</p>
           </div>
 
@@ -141,6 +147,9 @@ export const Footer = (props: FooterProps) => {
             </a>
             <a href={privacyUrl?.url} className="text-[#4F4E7A] text-xs">
               {privacyUrl?.title}
+            </a>
+            <a href={cookiesUrl?.url} className="text-[#4F4E7A] text-xs">
+              {cookiesUrl?.title}
             </a>
           </div>
         </div>
@@ -176,29 +185,26 @@ export const FooterDefaults: FooterProps = {
         { url: "/about-us", subTitle: "About us" },
         { url: "/security-and-compliance", subTitle: "Security & Compliance" },
         { url: "/partner-with-us", subTitle: "Partner with us" },
-        { url: "/careers", subTitle: "Careers" },
-        { url: "/news", subTitle: "News" },
+        // { url: "/careers", subTitle: "Careers" },
+        // { url: "/news", subTitle: "News" },
       ],
     },
   ],
   officeAddress: [
-    "Expo Business Park Str. Av.",
-    "Popișteanu, nr. 54A, etaj 1 Sector 1,",
-    "București",
+    "Expo Business Park",
+    "54A Av. Popisteanu Street, 1st floor",
+    "Bucharest, Romania",
   ],
   contactInfo: {
-    phone: "+40 123 456 789",
-    email: "contact@qoobiss.com",
+    email: "sales@qoobiss.com ",
   },
-  socialLinks: [
-    { platform: "LinkedIn", url: "#" },
-    { platform: "Facebook", url: "#" },
-  ],
+  socialLinks: [{ platform: "LinkedIn", url: "#" }],
   logo: { src: "/footer-qoobiss.svg", alt: "qoobiss logo" },
   mainHeadingText: "Innovation is bliss.",
   copyrightText: "Copyright © All rights reserved 2024",
-  termsUrl: { url: "#", title: "Terms And Conditions" },
-  privacyUrl: { url: "#", title: "Privacy Policy" },
+  termsUrl: { url: "/terms-and-conditions", title: "Terms And Conditions" },
+  privacyUrl: { url: "/privacy-policy", title: "Privacy Policy" },
+  cookiesUrl: { url: "/cookies-policy", title: "Cookies Policy" },
 };
 
 Footer.displayName = "Footer";

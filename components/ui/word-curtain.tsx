@@ -114,7 +114,7 @@ export const StaggeredHeading = ({
       {words.map((word, i) => (
         <React.Fragment key={i}>
           <motion.span
-            className={`inline-block overflow-hidden  ${wordClassName}`}
+            className={`inline-block overflow-hidden ${wordClassName}`}
             variants={wordVariants}
           >
             {word}

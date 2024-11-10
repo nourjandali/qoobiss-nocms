@@ -8,6 +8,7 @@ import {
 } from "../ui/accordion";
 import { Plus } from "lucide-react";
 import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
+import Link from "next/link";
 
 type QuestionsProps = {
   title: string;
@@ -42,7 +43,9 @@ export const Faq = (props: FaqProps) => {
               {heading}
             </StaggeredHeading>
             <div className="lg:mt-8 lg:flex hidden">
-              <Button {...button}>{button.title}</Button>
+              <Link href="/partner-with-us">
+                <Button {...button}>{button.title}</Button>
+              </Link>
             </div>
           </div>
           <Accordion type="multiple">
@@ -64,7 +67,9 @@ export const Faq = (props: FaqProps) => {
           </Accordion>
         </div>
         <div className="pt-12 lg:hidden text-center">
-          <Button {...buttonMobile}>{buttonMobile.title}</Button>
+          <Link href="/partner-with-us">
+            <Button {...buttonMobile}>{buttonMobile.title}</Button>
+          </Link>
         </div>
       </div>
     </section>
