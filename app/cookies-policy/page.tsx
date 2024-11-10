@@ -13,7 +13,7 @@ import { Banner } from "@/components/Banner";
 export default function CookiePolicy() {
   return (
     <main>
-      <Banner title="Cookie Policy" />
+      <Banner title="Cookies Policy" />
       <article className="prose prose-slate max-w-7xl mx-auto py-8">
         <div className="mb-8">
           <p className="text-sm text-gray-600">Last updated on 06.11.2024</p>

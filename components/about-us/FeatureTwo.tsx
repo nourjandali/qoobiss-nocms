@@ -53,23 +53,21 @@ export const FeatureTwo = (props: FeatureTwoProps) => {
 
 const Feature = ({ ...feature }: Feature) => {
   return (
-    <div className="p-[30px] lg:p-14 bg-white/40 flex flex-col gap-4 rounded-2xl">
+    <div className="p-[30px] lg:p-14 bg-white/40 flex flex-col gap-4 rounded-2xl lg:h-[500px]">
       <StaggeredHeading className="text-4xl text-electric-violet">
         {feature.number}
       </StaggeredHeading>
       <StaggeredHeading className="text-2xl lg:text-4xl pt-8 text-light-foreground lg:pt-[140px]">
         {feature.heading}
       </StaggeredHeading>
-      <AnimateHeading className="text-sm text-light-chapeau">
-        {feature.description}
-      </AnimateHeading>
+      <p className="text-sm text-light-chapeau">{feature.description}</p>
     </div>
   );
 };
 
 export const FeatureTwoDefaults: FeatureTwoProps = {
-  tagline: "Our values",
-  heading: "Our Core Values: Empowering Innovation and Excellence",
+  tagline: "OUR CORE VALUES",
+  heading: "Empowering Innovation and Excellence",
   description:
     "At Qoobiss, we’re dedicated to transforming challenges into opportunities and innovation. We empower our clients with advanced tools to lead their industries, providing the flexibility to adapt and thrive in a fast-changing world. By simplifying the complex, we make life easier, enabling our clients to focus on what they do best. Join us in redefining what’s possible and achieving new heights together.",
   features: [

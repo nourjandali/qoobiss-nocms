@@ -3,7 +3,6 @@ import { Faq } from "@/components/home/Faq";
 import { DarkFeature } from "@/components/home/DarkFeature";
 import { LightFeature } from "@/components/home/LightFeature";
 import { Header } from "@/components/home/Header";
-import { Certification } from "@/components/Certification";
 import { GetInTouch } from "@/components/GetInTouch";
 
 export default function Home() {
