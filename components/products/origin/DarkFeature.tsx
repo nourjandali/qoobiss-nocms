@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import { Button, type ButtonProps } from "@/components/ui/button";

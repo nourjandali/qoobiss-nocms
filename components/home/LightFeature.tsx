@@ -1,15 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+
 import { Button, type ButtonProps } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import Autoplay from "embla-carousel-autoplay";
 import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
 import Link from "next/link";
 

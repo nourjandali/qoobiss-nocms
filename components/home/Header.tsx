@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import Spline from "@splinetool/react-spline/next";

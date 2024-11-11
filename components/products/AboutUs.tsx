@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+
 import React from "react";
 import { Button, type ButtonProps } from "@/components/ui/button";
 import { StaggeredHeading } from "../ui/word-curtain";

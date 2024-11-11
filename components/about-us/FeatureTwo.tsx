@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
+import { StaggeredHeading } from "../ui/word-curtain";
 
 type Feature = {
   number: string;

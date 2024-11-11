@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button, type ButtonProps } from "@/components/ui/button";
+"use client";
+
 import Link from "next/link";
 
 type ImageProps = {

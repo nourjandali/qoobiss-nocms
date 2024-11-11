@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
+
 import { StaggeredHeading } from "../ui/word-curtain";
 
-/* eslint-disable @next/next/no-img-element */
 type ImageProps = {
   src: string;
   alt?: string;

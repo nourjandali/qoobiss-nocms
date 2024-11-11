@@ -1,4 +1,5 @@
 "use client";
+
 import { Button, type ButtonProps } from "../ui/button";
 import {
   Accordion,
@@ -7,7 +8,7 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 import { Plus } from "lucide-react";
-import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
+import { StaggeredHeading } from "../ui/word-curtain";
 import Link from "next/link";
 
 type QuestionsProps = {
