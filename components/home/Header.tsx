@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-
-import Spline from "@splinetool/react-spline/next";
 import clsx from "clsx";
 import { AnimateHeading, StaggeredHeading } from "../ui/word-curtain";
+import { SplineWrapper } from "../SplineWrapper";
 
 type Props = {
   coloredHeading: string;
@@ -28,10 +26,7 @@ export const Header = (props: HeaderProps) => {
         props.className
       )}
     >
-      <Spline
-        scene="https://prod.spline.design/EnrrqgBMC0Dgrjos/scene.splinecode"
-        className="absolute inset-0 size-full hidden lg:block"
-      />
+      <SplineWrapper />
       <div className="container container-padding bg-dark-background">
         <div className="pt-20 lg:py-48">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-5">
