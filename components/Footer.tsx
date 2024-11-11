@@ -198,7 +198,9 @@ export const FooterDefaults: FooterProps = {
   contactInfo: {
     email: "sales@qoobiss.com ",
   },
-  socialLinks: [{ platform: "LinkedIn", url: "#" }],
+  socialLinks: [
+    { platform: "LinkedIn", url: "https://www.linkedin.com/company/qoobiss/" },
+  ],
   logo: { src: "/footer-qoobiss.svg", alt: "qoobiss logo" },
   mainHeadingText: "Innovation is bliss.",
   copyrightText: "Copyright © All rights reserved 2024",
