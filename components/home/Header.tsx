@@ -17,6 +17,7 @@ export const Header = (props: HeaderProps) => {
     ...HeaderDefaults,
     ...props,
   } as Props;
+
   return (
     <section
       className={clsx(
@@ -34,24 +35,22 @@ export const Header = (props: HeaderProps) => {
               <h1 className="mb-5 text-8xl font-light md:mb-6 lg:text-[100px]">
                 <StaggeredHeading
                   wordClassName="text-accent"
-                  baseDelay={0.2}
                   staggerChildren={0.15}
                 >
                   {coloredHeading}
                 </StaggeredHeading>
                 <StaggeredHeading
                   wordClassName="text-gradient"
-                  baseDelay={0.5}
                   staggerChildren={0.15}
                 >
                   {heading}
                 </StaggeredHeading>
               </h1>
-              <AnimateHeading delay={1}>
+              <AnimateHeading>
                 <p className="text-2xl text-gradient">{description}</p>
               </AnimateHeading>
 
-              <AnimateHeading delay={1.2}>
+              <AnimateHeading>
                 <button className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5">
                   <ArrowDown />
                 </button>
