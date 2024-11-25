@@ -27,7 +27,7 @@ export const Banner = (props: BannerProps) => {
       <StaggeredHeading className="text-white text-4xl lg:text-11xl lg:font-light z-10 container container-padding">
         {title}
       </StaggeredHeading>
-      <div className="absolute z-0 inset-0 pointer-events-none lg:block hidden">
+      {/* <div className="absolute z-0 inset-0 pointer-events-none lg:block hidden">
         <img
           src="/banner-ellipse.png"
           alt="Banner ellipse"
@@ -40,7 +40,7 @@ export const Banner = (props: BannerProps) => {
           alt="Banner ellipse"
           className="size-full object-cover"
         />
-      </div>
+      </div> */}
     </section>
   );
 };
