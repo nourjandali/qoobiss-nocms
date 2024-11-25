@@ -48,12 +48,17 @@ export const Products = (props: ProductsProps) => {
     const handleScroll = () => {
       const sectionHeight = window.innerHeight;
       const currentScrollPosition = window.scrollY + sectionHeight / 2;
-      const currentSection = Math.floor(currentScrollPosition / sectionHeight);
-      setActiveSection(currentSection);
+      const maxScroll = sectionHeight * contents.length * 0.75;
+      if (currentScrollPosition <= maxScroll) {
+        const currentSection = Math.floor(
+          currentScrollPosition / sectionHeight
+        );
+        setActiveSection(currentSection);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [contents.length]);
 
   return (
     <section className="relative bg-dark-indigo">
@@ -62,6 +67,9 @@ export const Products = (props: ProductsProps) => {
           key={index}
           className={clsx(
             "fixed inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500",
+            "bg-dark-background bg-center [background-size:cover] bg-no-repeat",
+            "md:[background-size:800px]",
+            "lg:bg-[right_-7rem_top_0rem] lg:[background-size:cover]",
             {
               "opacity-100": activeSection === index,
               "opacity-0": activeSection !== index,
@@ -70,7 +78,7 @@ export const Products = (props: ProductsProps) => {
           style={{ backgroundImage: `url(${image.src})` }}
         />
       ))}
-      <div className="relative z-10">
+      <div className="relative">
         {contents.map((content, index) => (
           <div key={index} className="h-screen flex items-center">
             <div className="container container-padding relative">
@@ -78,7 +86,7 @@ export const Products = (props: ProductsProps) => {
                 <div
                   className="absolute -left-16 top-0 text-2xl text-dark-foreground opacity-30 lg:flex hidden items-center"
                   style={{
-                    top: `${activeSection * 25}%`,
+                    top: `${Math.min(activeSection * 25, 75)}%`,
                     height: "25%",
                   }}
                 >
@@ -89,7 +97,7 @@ export const Products = (props: ProductsProps) => {
                   <div
                     className="absolute left-0 w-2 h-1/4 -translate-x-1/2 bg-dark-foreground transition-all duration-300 lg:flex hidden"
                     style={{
-                      top: `${activeSection * 25}%`,
+                      top: `${Math.min(activeSection * 25, 75)}%`,
                     }}
                   />
                   <AnimateHeading className="text-gradient text-8xl lg:text-[100px] font-semibold mb-4">
@@ -106,7 +114,7 @@ export const Products = (props: ProductsProps) => {
                       {content.unColoredHeadingTwo}
                     </span>
                   </AnimateHeading>
-                  <AnimateHeading className="text-gradient lg:text-dark-chapeau max-w-lg mb-8">
+                  <AnimateHeading className="text-gradient lg:text-dark-chapeau max-w-lg mb-8 lg:text-lg">
                     {content.description}
                   </AnimateHeading>
                   <div className="flex gap-x-4">
@@ -128,20 +136,6 @@ export const Products = (props: ProductsProps) => {
           </div>
         ))}
       </div>
-      <div className="absolute z-0 inset-0 pointer-events-none lg:block hidden">
-        <img
-          src="/banner-ellipse.png"
-          alt="Banner ellipse"
-          className="object-cover"
-        />
-      </div>
-      <div className="absolute z-0 inset-0 pointer-events-none lg:hidden">
-        <img
-          src="/banner-ellipse-mobile.png"
-          alt="Banner ellipse"
-          className="object-cover w-full"
-        />
-      </div>
     </section>
   );
 };
@@ -151,7 +145,7 @@ export const ProductsDefaults: ProductsProps = {
     {
       title: "Origin",
       unColoredHeadingOne: "Orchestrate your",
-      coloredHeading: "clients’ journey",
+      coloredHeading: "clients' journey",
       unColoredHeadingTwo: "digitally",
       description:
         "Transform your client-facing operations into automated customized digital workflows. Digitalize the entire end-to-end client journey across any industry. Create, streamline and run efficient digital workflows in days, not months—without writing a single line of code.",
@@ -196,15 +190,15 @@ export const ProductsDefaults: ProductsProps = {
   ],
   images: [
     {
-      src: "/q-biz.png",
+      src: "/origin.png",
       alt: "Placeholder image 1",
     },
     {
-      src: "/q-identify.png",
+      src: "/ontrace.png",
       alt: "Placeholder image 2",
     },
     {
-      src: "/q-aml.png",
+      src: "/omnicheck.png",
       alt: "Placeholder image 3",
     },
   ],

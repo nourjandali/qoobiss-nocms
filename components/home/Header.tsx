@@ -21,18 +21,18 @@ export const Header = (props: HeaderProps) => {
   return (
     <section
       className={clsx(
-        "relative size-full h-[150vh] sm:h-[90vh] flex items-end justify-end lg:justify-normal lg:items-stretch lg:h-auto pb-20 lg:pb-0",
+        "relative size-full h-[150vh] sm:h-[80vh] flex items-end justify-end lg:justify-normal lg:items-stretch lg:h-auto pb-24 lg:pb-0",
         "bg-[url('/home-background-mobile.png')] lg:bg-none",
         "bg-dark-background bg-right-top bg-no-repeat lg:bg-center lg:bg-cover",
         props.className
       )}
     >
       <SplineWrapper />
-      <div className="container container-padding bg-dark-background">
+      <div className="container container-padding bg-transparent lg:bg-dark-background">
         <div className="pt-20 lg:py-48">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-5">
             <div className="z-10">
-              <h1 className="mb-5 text-8xl font-light md:mb-6 lg:text-[100px]">
+              <h1 className="mb-5 text-7xl font-light md:mb-6 lg:text-[100px]">
                 <StaggeredHeading
                   wordClassName="text-accent"
                   staggerChildren={0.15}
@@ -60,7 +60,7 @@ export const Header = (props: HeaderProps) => {
           </div>
         </div>
       </div>
-      <div className="absolute z-0 inset-0 pointer-events-none size-full lg:block hidden">
+      {/* <div className="absolute z-0 inset-0 pointer-events-none size-full lg:block hidden">
         <img
           src="/banner-ellipse.png"
           alt="Banner ellipse"
@@ -73,7 +73,7 @@ export const Header = (props: HeaderProps) => {
           alt="Banner ellipse"
           className="object-cover w-full"
         />
-      </div>
+      </div> */}
     </section>
   );
 };

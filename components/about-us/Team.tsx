@@ -33,7 +33,7 @@ export const Team = (props: TeamProps) => {
     <section className="pt-20 lg:pt-40">
       <div className="container container-padding flex flex-col gap-6 lg:gap-16">
         <div className="flex flex-col items-start gap-6">
-          <StaggeredHeading className="font-semibold uppercase text-sm text-electric-violet">
+          <StaggeredHeading className="font-semibold uppercase text-xl text-electric-violet">
             {tagline}
           </StaggeredHeading>
           <div className="max-w-lg w-full">
@@ -57,7 +57,9 @@ export const Team = (props: TeamProps) => {
                 <h1 className="text-light-foreground lg:text-2xl">
                   {member.name}
                 </h1>
-                <p className="text-sm text-light-chapeau">{member.jobTitle}</p>
+                <p className="lg:text-lg text-light-chapeau">
+                  {member.jobTitle}
+                </p>
               </div>
             </div>
           ))}

@@ -10,6 +10,7 @@ import ReactConfetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import { StaggeredHeading } from "./ui/word-curtain";
 import Link from "next/link";
+import { GetInTouch } from "./GetInTouch";
 
 type InputField = {
   placeholder: string;
@@ -131,7 +132,7 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
   };
 
   return (
-    <section className="pt-36 lg:pt-52 relative">
+    <section className="pt-20 lg:pt-28 relative">
       {showConfetti && (
         <ReactConfetti
           width={width}
@@ -147,7 +148,7 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
             <StaggeredHeading className="self-stretch text-4xl text-light-foreground">
               {heading}
             </StaggeredHeading>
-            <p className="text-sm text-light-chapeau">{description}</p>
+            <p className="lg:text-lg text-light-chapeau">{description}</p>
             <div className="flex flex-col items-start gap-10 self-stretch">
               {infoSections.map((section, index) => (
                 <div key={index} className="flex flex-col items-start gap-2.5">
@@ -158,7 +159,7 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
                     {section.items.map((item, itemIndex) => (
                       <p
                         key={itemIndex}
-                        className="text-light-chapeau text-sm leading-[1.4] flex flex-col"
+                        className="text-light-chapeau text-sm lg:text-base flex flex-col"
                       >
                         <span className="font-semibold first-of-type:mt-4">
                           {item.title}
@@ -219,13 +220,14 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
           </form>
         </div>
       </div>
-      <div className="pt-20 pb-5 flex items-center justify-center lg:container lg:container-padding">
+      {/* <div className="pt-20 pb-5 flex items-center justify-center lg:container lg:container-padding">
         <img
           src={images.main.src}
           alt={images.main.alt}
           className="lg:rounded-2xl aspect-video object-cover"
         />
-      </div>
+      </div> */}
+      <GetInTouch />
       <div className="absolute -z-10 inset-0 pointer-events-none">
         <img
           src={images.background.src}

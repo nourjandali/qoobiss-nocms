@@ -43,7 +43,7 @@ export const NextUseCaseCard = (props: NextUseCaseCardProps) => {
               className="rounded-2xl flex-shrink-0 lg:hidden size-20 object-cover"
             />
             <div className="flex lg:px-5 flex-col justify-center items-start gap-2.5 flex-1 w-full">
-              <p className="text-sm text-electric-violet font-semibold uppercase">
+              <p className="text-xl text-electric-violet font-semibold uppercase">
                 {tagline}
               </p>
               <h1 className="text-base lg:text-2xl text-light-foreground">

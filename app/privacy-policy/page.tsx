@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <Banner title="Privacy Policy" />
-      <article className="prose prose-slate max-w-7xl mx-auto py-8">
+      <article className="prose prose-slate max-w-xxs lg:max-w-7xl mx-auto py-8">
         <div className="mb-8">
           <p className="text-sm text-gray-600">Last updated on 06.11.2024</p>
         </div>

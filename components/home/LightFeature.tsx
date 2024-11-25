@@ -42,7 +42,7 @@ export const LightFeature = (props: LightFeatureProps) => {
       <div className="container container-padding">
         <div className="flex flex-col items-start lg:gap-20">
           <div>
-            <p className="mb-3 font-semibold lg:mb-4 uppercase text-sm leading-[1.3] text-electric-violet">
+            <p className="font-semibold mb-6 uppercase text-xl leading-[1.3] text-electric-violet">
               {tagline}
             </p>
             <div className="flex lg:flex-row flex-col gap-5 self-stretch items-start w-full">
@@ -50,7 +50,7 @@ export const LightFeature = (props: LightFeatureProps) => {
                 {heading}
               </StaggeredHeading>
               <div className="lg:w-1/2">
-                <p className="text-light-chapeau">{description}</p>
+                <p className="text-light-chapeau lg:text-lg">{description}</p>
                 <div className="py-12 flex lg:justify-normal justify-center items-center gap-4 lg:mt-[30px]">
                   <Link href="/partner-with-us">
                     <Button {...button} className="px-[30px] py-[15px]">
@@ -65,7 +65,7 @@ export const LightFeature = (props: LightFeatureProps) => {
             {sections.map((section, index) => (
               <div
                 key={index}
-                className="flex flex-col p-14 h-full bg-white/40 rounded-2xl"
+                className="flex flex-col p-[30px] lg:p-14 h-full bg-white/40 rounded-2xl"
               >
                 <div className="flex w-full items-center justify-between">
                   <StaggeredHeading className="text-electric-violet leading-[1.2] text-2xl lg:text-4xl self-start">
@@ -73,15 +73,15 @@ export const LightFeature = (props: LightFeatureProps) => {
                   </StaggeredHeading>
                   <img
                     src={section.icon.src}
-                    className="size-28 lg:size-32"
+                    className="size-36 lg:size-48"
                     alt={section.icon.alt}
                   />
                 </div>
                 <div className="flex flex-col flex-1 justify-between mt-20">
-                  <StaggeredHeading className="text-2xl lg:text-4xl text-light-foreground min-h-24">
+                  <StaggeredHeading className="text-2xl lg:text-4xl text-light-foreground lg:min-h-24">
                     {section.heading}
                   </StaggeredHeading>
-                  <AnimateHeading className="text-light-chapeau text-sm leading-[1.3] mt-3">
+                  <AnimateHeading className="text-light-chapeau lg:text-lg leading-[1.3] mt-3">
                     {section.description}
                   </AnimateHeading>
                 </div>

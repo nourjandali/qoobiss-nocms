@@ -34,9 +34,11 @@ export const Banner = (props: BannerProps) => {
   return (
     <section
       className={clsx(
-        "relative flex flex-col items-end justify-end lg:justify-center lg:items-center size-full h-[90vh] lg:h-[130vh] pb-20 lg:pb-0",
-        "bg-[url('/q-biz.png')]",
-        "bg-dark-background bg-right-top [background-size:630px] bg-no-repeat lg:bg-center lg:bg-cover",
+        "relative flex flex-col items-end justify-end lg:justify-center lg:items-center size-full min-h-[900px] lg:h-[80vh] pb-20 lg:pb-0",
+        "bg-[url('/origin.png')]",
+        "bg-dark-background bg-[right_-3rem_top_-5rem] [background-size:700px] bg-no-repeat",
+        "md:[background-size:800px]",
+        "lg:bg-center lg:[background-size:cover]",
         props.className
       )}
     >
@@ -51,28 +53,14 @@ export const Banner = (props: BannerProps) => {
               <span className="text-accent">{coloredHeading}</span>{" "}
               <span className="text-gradient">{unColoredHeadingTwo}</span>
             </AnimateHeading>
-            <p className="text-gradient lg:text-dark-chapeau max-w-sm">
+            <p className="text-gradient lg:text-lg lg:text-dark-chapeau max-w-sm">
               {description}
             </p>
           </div>
-          <Link href="/partner-with-us">
+          <Link href="https://calendly.com/qoobiss/30min">
             <Button {...button}>{button.title}</Button>
           </Link>
         </div>
-      </div>
-      <div className="absolute z-0 inset-0 pointer-events-none lg:block hidden">
-        <img
-          src="/banner-ellipse.png"
-          alt="Banner ellipse"
-          className="object-cover w-full"
-        />
-      </div>
-      <div className="absolute z-0 inset-0 pointer-events-none lg:hidden">
-        <img
-          src="/banner-ellipse-mobile.png"
-          alt="Banner ellipse"
-          className="object-cover w-full"
-        />
       </div>
     </section>
   );
@@ -81,12 +69,12 @@ export const Banner = (props: BannerProps) => {
 export const BannerDefaults: BannerProps = {
   title: "Origin",
   unColoredHeadingOne: "Orchestrate your",
-  coloredHeading: "clients’ journey",
+  coloredHeading: "clients' journey",
   unColoredHeadingTwo: "digitally",
   description:
     "Transform your client-facing operations into automated customized digital workflows. Digitalize the entire end-to-end client journey across any industry. Create, streamline and run efficient digital workflows in days, not months—without writing a single line of code.",
   button: {
-    title: "Get in touch",
+    title: "Book a demo",
     variant: "indigo",
     size: "indigo",
   },

@@ -35,11 +35,11 @@ export const AboutUs = (props: AboutUsProps) => {
   } as Props;
 
   return (
-    <section className="pt-20 lg:py-40 relative">
+    <section className="pt-20 lg:py-40 relative bg-light-background z-20">
       <div className="container container-padding">
         <div className="flex flex-col lg:flex-row justify-between items-start">
           <div className="lg:w-1/2 mb-8 lg:mb-0">
-            <StaggeredHeading className="font-semibold uppercase text-sm text-electric-violet mb-8">
+            <StaggeredHeading className="font-semibold uppercase text-xl text-electric-violet mb-8">
               {tagline}
             </StaggeredHeading>
             <StaggeredHeading className="text-light-foreground text-4xl lg:font-light lg:text-11xl mb-8">
@@ -50,7 +50,7 @@ export const AboutUs = (props: AboutUsProps) => {
               alt={image.alt}
               className="w-full rounded-lg lg:mb-12"
             />
-            <Link href="/partner-with-us">
+            <Link href="https://calendly.com/qoobiss/30min">
               <Button {...button} className="lg:flex hidden">
                 {button.title}
               </Button>
@@ -63,7 +63,7 @@ export const AboutUs = (props: AboutUsProps) => {
           </div>
 
           <div className="lg:hidden items-center justify-center text-center flex w-full mt-14 lg:mt-0">
-            <Link href="/partner-with-us">
+            <Link href="https://calendly.com/qoobiss/30min">
               <Button {...button} className="px-[30px] py-[15px]">
                 {button.title}
               </Button>
@@ -82,7 +82,9 @@ export const Stat = ({ value, label, description }: StatProps) => {
         {value}
       </StaggeredHeading>
       <StaggeredHeading className="text-2xl mb-4">{label}</StaggeredHeading>
-      <p className="text-light-chapeau leading-[1.4] lg:w-1/2">{description}</p>
+      <p className="text-light-chapeau lg:text-md leading-[1.4] lg:w-1/2">
+        {description}
+      </p>
     </div>
   );
 };
@@ -91,11 +93,11 @@ export const AboutUsDefaults: AboutUsProps = {
   tagline: "NUMBERS AT A GLANCE",
   title: "Experience the power of efficiency",
   image: {
-    src: "/q-image.png",
+    src: "/aboutus-image.png",
     alt: "Q's image",
   },
   button: {
-    title: "Let's talk",
+    title: "Book a demo",
     variant: "light-default",
     size: "default",
   },

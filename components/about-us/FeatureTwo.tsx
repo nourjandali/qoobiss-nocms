@@ -29,16 +29,14 @@ export const FeatureTwo = (props: FeatureTwoProps) => {
     <section className="pt-20 lg:pt-40">
       <div className="container container-padding flex flex-col gap-20">
         <div className="flex flex-col gap-6">
-          <StaggeredHeading className="font-semibold uppercase text-sm text-electric-violet">
+          <StaggeredHeading className="font-semibold uppercase text-xl text-electric-violet">
             {tagline}
           </StaggeredHeading>
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:justify-between lg:gap-40">
             <StaggeredHeading className="text-light-foreground text-4xl lg:font-light lg:text-8xl">
               {heading}
             </StaggeredHeading>
-            <p className="text-light-chapeau text-sm lg:text-base">
-              {description}
-            </p>
+            <p className="text-light-chapeau lg:text-lg">{description}</p>
           </div>
         </div>
         <div className="grid grid-cols-1 items-center lg:grid-cols-2 justify-center gap-5">
@@ -60,7 +58,7 @@ const Feature = ({ ...feature }: Feature) => {
       <StaggeredHeading className="text-2xl lg:text-4xl pt-8 text-light-foreground lg:pt-[140px]">
         {feature.heading}
       </StaggeredHeading>
-      <p className="text-sm text-light-chapeau">{feature.description}</p>
+      <p className="lg:text-lg text-light-chapeau">{feature.description}</p>
     </div>
   );
 };

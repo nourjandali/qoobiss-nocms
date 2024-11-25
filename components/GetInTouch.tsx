@@ -2,6 +2,7 @@
 "use client";
 
 import clsx from "clsx";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -16,7 +17,12 @@ export const GetInTouch = (props: GetInTouchProps) => {
   } as Props;
 
   return (
-    <section className={clsx("pt-20 lg:pt-28", props.className)}>
+    <section
+      className={clsx(
+        "pt-20 lg:pt-28 z-10 bg-light-background relative",
+        props.className
+      )}
+    >
       <div className="container container-padding">
         <div className="relative size-full rounded-2xl overflow-hidden p-20 bg-[url('/get-in-touch-bg-mobile.png')] lg:bg-[url('/get-in-touch-bg.svg')] bg-center bg-no-repeat bg-cover">
           <img
@@ -25,17 +31,20 @@ export const GetInTouch = (props: GetInTouchProps) => {
             className="absolute inset-0 size-full object-cover z-0"
           />
           <div className="relative z-10 flex flex-col justify-center items-center lg:justify-normal lg:items-start gap-10 lg:gap-20">
-            <p className="text-electric-violet text-sm font-semibold uppercase">
+            <p className="text-electric-violet text-xl font-semibold uppercase">
               Connect with us
             </p>
             <h2 className="lg:text-[90px] text-8xl font-light lg:w-[50%] text-center lg:text-left">
-              <span className="text-gradient">Get in</span>{" "}
-              <span className="text-gradient lg:hidden">touch</span>
-              <div className="flex items-center lg:justify-normal justify-center lg:gap-2">
-                <span className="text-accent hidden lg:block">touch</span>
-                <a className="mt-8 lg:mt-0" href="/partner-with-us">
+              <span className="text-gradient">Book a</span>{" "}
+              <span className="text-gradient lg:hidden">demo</span>
+              <div className="flex items-center lg:justify-normal justify-center lg:gap-6">
+                <span className="text-accent hidden lg:block">demo</span>
+                <Link
+                  className="mt-8 lg:mt-0"
+                  href="https://calendly.com/qoobiss/30min"
+                >
                   <CtaIcon />
-                </a>
+                </Link>
               </div>
             </h2>
           </div>

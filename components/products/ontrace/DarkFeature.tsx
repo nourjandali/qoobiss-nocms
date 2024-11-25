@@ -33,7 +33,7 @@ export const DarkFeature = (props: DarkFeatureProps) => {
     ...props,
   } as Props;
   return (
-    <section className="pb-12 pt-6 lg:py-40 relative">
+    <section className="pb-12 pt-6 lg:py-20 lg:pb-40 relative">
       <div className="container container-padding">
         <div className="grid grid-cols-1 items-start lg:justify-between lg:grid-cols-[0.5fr_1fr]">
           <div className="w-[85%]">
@@ -49,7 +49,10 @@ export const DarkFeature = (props: DarkFeatureProps) => {
           </div>
           <div className="mt-12 lg:mt-0 grid w-full auto-cols-fr grid-cols-1 gap-y-5 lg:gap-y-12 lg:grid-cols-2 lg:gap-5">
             {features.map((feature, index) => (
-              <div key={index} className="p-16 custom-gradient rounded-2xl">
+              <div
+                key={index}
+                className="p-[30px] lg:p-16 custom-gradient rounded-2xl"
+              >
                 <div className="mb-5 md:mb-[140px]">
                   <img
                     src={feature.icon.src}
@@ -60,7 +63,7 @@ export const DarkFeature = (props: DarkFeatureProps) => {
                 <StaggeredHeading className="mb-6 md:mb-8 text-xl lg:text-4xl text-dark-foreground">
                   {feature.heading}
                 </StaggeredHeading>
-                <AnimateHeading className="text-dark-chapeau text-sm leading-[1.3]">
+                <AnimateHeading className="text-dark-chapeau lg:text-lg leading-[1.3]">
                   {feature.description}
                 </AnimateHeading>
               </div>

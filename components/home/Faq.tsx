@@ -37,14 +37,14 @@ export const Faq = (props: FaqProps) => {
       <div className="container container-padding">
         <div className="grid grid-cols-1 gap-y-6 lg:gap-y-12 lg:grid-cols-[.75fr,1fr] lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold lg:mb-4 uppercase text-sm leading-[1.3] text-electric-violet">
+            <p className="font-semibold mb-6 uppercase text-xl leading-[1.3] text-electric-violet">
               {tagline}
             </p>
             <StaggeredHeading className="text-5xl font-light lg:mb-6 lg:text-8xl">
               {heading}
             </StaggeredHeading>
             <div className="lg:mt-8 lg:flex hidden">
-              <Link href="/partner-with-us">
+              <Link href="https://calendly.com/qoobiss/30min">
                 <Button {...button}>{button.title}</Button>
               </Link>
             </div>
@@ -56,11 +56,11 @@ export const Faq = (props: FaqProps) => {
                   icon={
                     <Plus className="size-7 shrink-0 p-1 transition-transform duration-300 lg:size-8 text-electric-violet" />
                   }
-                  className="lg:py-5 lg:text-md [&[data-state=open]>svg]:rotate-45 font-normal text-light-foreground text-left"
+                  className="lg:py-5 text-lg lg:text-2xl [&[data-state=open]>svg]:rotate-45 font-normal text-light-foreground text-left"
                 >
                   {question.title}
                 </AccordionTrigger>
-                <AccordionContent className="lg:pb-6 text-light-chapeau text-sm leading-[1.3]">
+                <AccordionContent className="lg:pb-6 text-light-chapeau text-sm lg:text-lg leading-[1.3]">
                   {question.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -68,7 +68,7 @@ export const Faq = (props: FaqProps) => {
           </Accordion>
         </div>
         <div className="pt-12 lg:hidden text-center">
-          <Link href="/partner-with-us">
+          <Link href="https://calendly.com/qoobiss/30min">
             <Button {...buttonMobile}>{buttonMobile.title}</Button>
           </Link>
         </div>
@@ -81,7 +81,7 @@ export const FaqDefaults: FaqProps = {
   tagline: "Discover more",
   heading: "What would you like to know?",
   button: {
-    title: "Contact",
+    title: "Book a demo",
     variant: "light-default",
   },
   questions: [

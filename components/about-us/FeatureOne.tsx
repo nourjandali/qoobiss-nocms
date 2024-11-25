@@ -44,15 +44,13 @@ export const FeatureOne = (props: FeatureOneProps) => {
             />
           </div>
           <div className="grid grid-cols-1 gap-6 container-padding">
-            <StaggeredHeading className="font-semibold uppercase text-sm text-electric-violet">
+            <StaggeredHeading className="font-semibold uppercase text-xl text-electric-violet">
               {tagline}
             </StaggeredHeading>
             <StaggeredHeading className="text-light-foreground text-4xl lg:text-8xl lg:font-light">
               {heading}
             </StaggeredHeading>
-            <div className="text-light-chapeau text-sm lg:text-base">
-              {children}
-            </div>
+            <div className="text-light-chapeau lg:text-lg">{children}</div>
           </div>
         </div>
       </div>
@@ -75,11 +73,11 @@ export const FeatureOneDefaults: FeatureOneProps = {
     </React.Fragment>
   ),
   image: {
-    src: "/aboutus-image.png",
+    src: "/q-image.png",
     alt: "About Us image",
   },
   imageMobile: {
-    src: "/aboutus-image-mobile.png",
+    src: "/q-image.png",
     alt: "About Us image",
   },
 };

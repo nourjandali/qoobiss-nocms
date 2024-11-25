@@ -34,11 +34,11 @@ export const DarkFeature2 = (props: DarkFeature2Props) => {
     ...props,
   } as Props;
   return (
-    <section className="pb-12 pt-6 lg:py-40 relative">
+    <section className="pt-20 lg:py-40 relative">
       <div className="container container-padding">
         <div className="grid grid-cols-1 items-start lg:justify-between lg:grid-cols-[0.5fr_1fr]">
           <div className="flex flex-col gap-6 w-[85%]">
-            <StaggeredHeading className="font-semibold uppercase text-sm text-electric-violet">
+            <StaggeredHeading className="font-semibold uppercase text-xl text-electric-violet">
               {tagline}
             </StaggeredHeading>
             <StaggeredHeading className="text-light-foreground text-4xl lg:font-light lg:text-8xl">
@@ -47,7 +47,10 @@ export const DarkFeature2 = (props: DarkFeature2Props) => {
           </div>
           <div className="mt-12 lg:mt-0 z-10 grid w-full auto-cols-fr grid-cols-1 gap-y-5 lg:gap-y-12 lg:grid-cols-2 lg:gap-5">
             {features.map((feature, index) => (
-              <div key={index} className="p-16 bg-white rounded-2xl">
+              <div
+                key={index}
+                className="p-[30px] lg:p-16 bg-white rounded-2xl"
+              >
                 <div className="mb-5 md:mb-[140px]">
                   <img
                     src={feature.icon.src}
@@ -58,18 +61,18 @@ export const DarkFeature2 = (props: DarkFeature2Props) => {
                 <StaggeredHeading className="mb-6 md:mb-8 text-xl lg:text-4xl text-light-foreground">
                   {feature.heading}
                 </StaggeredHeading>
-                <AnimateHeading className="text-light-chapeau text-sm leading-[1.3]">
+                <AnimateHeading className="text-light-chapeau lg:text-lg leading-[1.3]">
                   {feature.description}
                 </AnimateHeading>
               </div>
             ))}
           </div>
         </div>
-        <div className="mt-12 flex items-center justify-center gap-x-4 lg:mt-0 lg:hidden">
+        {/* <div className="mt-12 flex items-center justify-center gap-x-4 lg:mt-0 lg:hidden">
           <Link href="/partner-with-us">
             <Button {...button}>{button.title}</Button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -118,5 +121,5 @@ export const DarkFeature2Defaults: DarkFeature2Props = {
         "Streamline onboarding clients and fraud prevention with Ontrace. Our solution verifies new user identities swiftly, supporting compliance and reducing the risk of fraud in a sector that requires high security and quick processing times for new accounts and services.",
     },
   ],
-  button: { title: "Let's talk", variant: "dark-default" },
+  // button: { title: "Let's talk", variant: "dark-default" },
 };

@@ -105,12 +105,14 @@ export const SecurityAndCompliance = (props: SecurityAndComplianceProps) => {
 
                 <DialogContent className="sm:max-w-2xl">
                   <DialogHeader>
-                    <DialogTitle className="flex items-center gap-2">
-                      {cert.title}
-                      <Badge>{cert.badge}</Badge>
-                    </DialogTitle>
+                    <span className="flex flex-col lg:flex-row lg:items-center gap-2">
+                      <DialogTitle className="text-left">
+                        {cert.title}
+                      </DialogTitle>
+                      <Badge className="bg-gray-100 w-fit">{cert.badge}</Badge>
+                    </span>
                     <DialogDescription>
-                      <div className="mt-4 space-y-4">
+                      <div className="mt-4 space-y-4 text-left">
                         <img
                           src={cert.isoImage.src}
                           alt={cert.isoImage.alt}

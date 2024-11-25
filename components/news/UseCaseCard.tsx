@@ -44,7 +44,7 @@ export const UseCaseCard = (props: UseCaseCardProps) => {
         />
 
         <div className="flex px-5 flex-col justify-center items-start gap-4 lg:gap-6 flex-1">
-          <StaggeredHeading className="text-sm text-electric-violet font-semibold uppercase">
+          <StaggeredHeading className="text-xl text-electric-violet font-semibold uppercase">
             {tagline}
           </StaggeredHeading>
           <StaggeredHeading className="text-xl lg:text-2xl text-light-foreground">

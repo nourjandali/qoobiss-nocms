@@ -19,7 +19,7 @@ export const UseCaseBanner = (props: UseCaseBannerProps) => {
     <section>
       <div className="flex flex-col items-start justify-center bg-center bg-cover bg-no-repeat w-full h-[75vh] relative bg-[url('/use-case-banner.svg')] lg:bg-[url('/use-case-banner.svg')]">
         <div className="container container-padding flex flex-col items-start gap-2 lg:gap-5">
-          <p className="font-semibold uppercase text-sm text-electric-violet">
+          <p className="font-semibold uppercase text-xl text-electric-violet">
             {tagline}
           </p>
           <h1 className="text-white text-4xl lg:text-11xl lg:font-light z-10 max-w-xxs lg:max-w-[52rem] w-full">

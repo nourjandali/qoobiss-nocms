@@ -72,7 +72,7 @@ export const Footer = (props: FooterProps) => {
   } as Props;
 
   return (
-    <footer className="pb-4 lg:pb-0 pt-20 lg:pt-28 relative">
+    <footer className="pb-4 lg:pb-0 pt-20 lg:pt-28 bg-light-background relative">
       <div className="container container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-[0.35fr_1fr] lg:mb-20">
           <Link href="/">

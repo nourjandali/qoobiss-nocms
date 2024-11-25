@@ -34,9 +34,11 @@ export const Banner = (props: BannerProps) => {
   return (
     <section
       className={clsx(
-        "relative flex flex-col items-end justify-end lg:justify-center lg:items-center size-full h-[90vh] lg:h-[130vh] pb-20 lg:pb-0",
-        "bg-[url('/q-aml.png')]",
-        "bg-dark-background bg-right-top [background-size:630px] bg-no-repeat lg:bg-center lg:bg-cover",
+        "relative flex flex-col items-end justify-end lg:justify-center lg:items-center size-full min-h-[925px] lg:h-[80vh] pb-20 lg:pb-0",
+        "bg-[url('/omnicheck.png')]",
+        "bg-dark-background bg-[right_-3rem_top_-5rem] [background-size:700px] bg-no-repeat",
+        "md:[background-size:900px]",
+        "lg:bg-center lg:[background-size:cover]",
         props.className
       )}
     >
@@ -51,16 +53,16 @@ export const Banner = (props: BannerProps) => {
               <span className="text-accent">{coloredHeading}</span>{" "}
               <span className="text-gradient">{unColoredHeadingTwo}</span>
             </AnimateHeading>
-            <AnimateHeading className="text-gradient lg:text-dark-chapeau max-w-sm">
+            <AnimateHeading className="text-gradient lg:text-dark-chapeau max-w-sm lg:text-lg">
               {description}
             </AnimateHeading>
           </div>
-          <Link href="/partner-with-us">
+          <Link href="https://calendly.com/qoobiss/30min">
             <Button {...button}>{button.title}</Button>
           </Link>
         </div>
       </div>
-      <div className="absolute z-0 inset-0 pointer-events-none lg:block hidden">
+      {/* <div className="absolute z-0 inset-0 pointer-events-none lg:block hidden">
         <img
           src="/banner-ellipse.png"
           alt="Banner ellipse"
@@ -73,7 +75,7 @@ export const Banner = (props: BannerProps) => {
           alt="Banner ellipse"
           className="object-cover w-full"
         />
-      </div>
+      </div> */}
     </section>
   );
 };
@@ -86,7 +88,7 @@ export const BannerDefaults: BannerProps = {
   description:
     "Streamline your compliance process with an automated AML solution verification and monitorization of natural & legal persons. Easility Navigate complex AML compliance challenges of your contractual  customer relationship  and integrate critical AML checks within your core business operations, enhancing both compliance and operational efficiency.",
   button: {
-    title: "Get in touch",
+    title: "Book a demo",
     variant: "indigo",
     size: "indigo",
   },

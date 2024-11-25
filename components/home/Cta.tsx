@@ -21,7 +21,7 @@ export const Cta = (props: CtaProps) => {
     <section className="pt-20 lg:pt-40 bg-dark-background">
       <div className="container container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-[0.35fr_1fr] justify-between items-start w-full gap-x-20 gap-y-6">
-          <StaggeredHeading className="text-electric-violet text-sm leading-[1.3] font-semibold uppercase">
+          <StaggeredHeading className="text-electric-violet text-xl leading-[1.3] font-semibold uppercase">
             {heading}
           </StaggeredHeading>
           <AnimateHeading className="text-4xl leading-[1.2] lg:text-11xl font-light lg:justify-self-end">
