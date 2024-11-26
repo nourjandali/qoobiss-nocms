@@ -56,17 +56,16 @@ export const DarkFeature = (props: DarkFeatureProps) => {
                 className="p-[30px] lg:p-16 custom-gradient rounded-2xl h-full flex flex-col"
               >
                 <div>
-                  <div className="mb-[36px]">
+                  <div className="mb-8">
                     <img
                       src={feature.icon.src}
-                      className="size-28 lg:size-32"
+                      className="size-24"
                       alt={feature.icon.alt}
                     />
                   </div>
-                  <AnimateHeading className="mb-6 text-2xl lg:mb-8 lg:text-4xl lg:leading-[1.2] text-dark-foreground">
-                    {feature.heading.split(" ")[0]} <br />
-                    {feature.heading.split(" ").slice(1).join(" ")}
-                  </AnimateHeading>
+                  <StaggeredHeading className="mb-6 text-2xl lg:mb-8 lg:text-4xl lg:leading-[1.2] text-dark-foreground">
+                    {feature.heading}
+                  </StaggeredHeading>
                 </div>
                 <p className="text-dark-chapeau lg:text-lg leading-[1.3]">
                   {feature.description}

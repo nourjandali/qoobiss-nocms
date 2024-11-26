@@ -51,7 +51,7 @@ export const DarkFeature2 = (props: DarkFeature2Props) => {
                 key={index}
                 className="p-[30px] lg:p-16 bg-white rounded-2xl"
               >
-                <div className="mb-5 ">
+                <div className="mb-8">
                   <img
                     src={feature.icon.src}
                     className="size-24"

@@ -68,14 +68,14 @@ export const LightFeature = (props: LightFeatureProps) => {
                 className="flex flex-col p-[30px] lg:p-14 h-full bg-white/40 rounded-2xl"
               >
                 <div className="flex w-full items-center justify-between">
-                  <StaggeredHeading className="text-electric-violet leading-[1.2] text-2xl lg:text-4xl self-start">
-                    {section.number}
-                  </StaggeredHeading>
                   <img
                     src={section.icon.src}
-                    className="size-36 lg:size-48"
+                    className="size-28 lg:size-40 -ml-6 lg:-ml-10"
                     alt={section.icon.alt}
                   />
+                  <StaggeredHeading className="text-electric-violet leading-[1.2] text-2xl lg:text-4xl -mt-8 lg:-mt-12">
+                    {section.number}
+                  </StaggeredHeading>
                 </div>
                 <div className="flex flex-col flex-1 justify-between">
                   <StaggeredHeading className="text-2xl lg:text-4xl text-light-foreground lg:min-h-24">

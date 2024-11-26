@@ -65,16 +65,16 @@ export const LightFeature = (props: LightFeatureProps) => {
 const Feature = ({ ...feature }: Feature) => {
   return (
     <div className="p-[30px] lg:p-14 bg-white/40 rounded-2xl flex flex-col h-full">
-      <div className="flex flex-col gap-4 h-full">
-        <div className="flex-shrink-0">
+      <div className="flex flex-col h-full mb-8">
+        <div className="flex-shrink-0 mb-8">
           <img
             src={feature.image.src}
             alt={feature.image.alt}
-            className="size-32"
+            className="size-24"
           />
         </div>
         <div className="flex flex-col flex-grow justify-between">
-          <StaggeredHeading className="text-2xl lg:text-4xl pt-8 text-light-foreground ">
+          <StaggeredHeading className="text-2xl lg:text-4xl text-light-foreground ">
             {feature.heading}
           </StaggeredHeading>
           <AnimateHeading className="lg:text-lg text-light-chapeau mt-4">
