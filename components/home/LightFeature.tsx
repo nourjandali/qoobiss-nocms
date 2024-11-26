@@ -77,7 +77,7 @@ export const LightFeature = (props: LightFeatureProps) => {
                     alt={section.icon.alt}
                   />
                 </div>
-                <div className="flex flex-col flex-1 justify-between mt-20">
+                <div className="flex flex-col flex-1 justify-between">
                   <StaggeredHeading className="text-2xl lg:text-4xl text-light-foreground lg:min-h-24">
                     {section.heading}
                   </StaggeredHeading>

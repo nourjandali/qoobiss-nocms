@@ -56,7 +56,7 @@ export const DarkFeature = (props: DarkFeatureProps) => {
                 className="p-[30px] lg:p-16 custom-gradient rounded-2xl h-full flex flex-col"
               >
                 <div>
-                  <div className="mb-[36px] lg:mb-[140px]">
+                  <div className="mb-[36px]">
                     <img
                       src={feature.icon.src}
                       className="size-28 lg:size-32"
