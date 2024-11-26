@@ -186,13 +186,15 @@ export const Navbar = () => {
               className="bg-white/25 h-8 mx-4 hidden lg:block"
               orientation="vertical"
             />
-            <Button
-              variant="primary-dark"
-              size="primary"
-              className="hidden lg:block"
-            >
-              Get in touch
-            </Button>
+            <Link href="/partner-with-us">
+              <Button
+                variant="primary-dark"
+                size="primary"
+                className="hidden lg:block"
+              >
+                Get in touch
+              </Button>
+            </Link>
             <MobileNav open={open} onOpenChange={setOpen} />
           </div>
         </div>

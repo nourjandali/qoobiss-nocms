@@ -10,7 +10,7 @@ type ImageProps = {
   alt?: string;
 };
 
-type DarkFeaturesProps = {
+type Feature = {
   icon: ImageProps;
   heading: string;
   description: string;
@@ -20,7 +20,7 @@ type Props = {
   heading: string;
   description: string;
   button: ButtonProps;
-  DarkFeatures: DarkFeaturesProps[];
+  features: Feature[];
   image: ImageProps;
 };
 
@@ -28,7 +28,7 @@ export type DarkFeatureProps = React.ComponentPropsWithoutRef<"section"> &
   Partial<Props>;
 
 export const DarkFeature = (props: DarkFeatureProps) => {
-  const { heading, description, button, DarkFeatures } = {
+  const { heading, description, button, features } = {
     ...DarkFeatureDefaults,
     ...props,
   } as Props;
@@ -49,25 +49,28 @@ export const DarkFeature = (props: DarkFeatureProps) => {
               </Link>
             </div>
           </div>
-          <div className="grid w-full auto-cols-fr grid-cols-1 gap-y-5 lg:gap-y-12 lg:grid-cols-2 lg:gap-5">
-            {DarkFeatures.map((DarkFeature, index) => (
+          <div className="grid w-full grid-cols-1 gap-y-5 lg:grid-cols-2 lg:gap-5 lg:gap-y-12">
+            {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-[30px] lg:p-16 custom-gradient rounded-2xl"
+                className="p-[30px] lg:p-16 custom-gradient rounded-2xl h-full flex flex-col"
               >
-                <div className="mb-[36px] lg:mb-[140px]">
-                  <img
-                    src={DarkFeature.icon.src}
-                    className="size-28 lg:size-32"
-                    alt={DarkFeature.icon.alt}
-                  />
+                <div>
+                  <div className="mb-[36px] lg:mb-[140px]">
+                    <img
+                      src={feature.icon.src}
+                      className="size-28 lg:size-32"
+                      alt={feature.icon.alt}
+                    />
+                  </div>
+                  <AnimateHeading className="mb-6 text-2xl lg:mb-8 lg:text-4xl lg:leading-[1.2] text-dark-foreground">
+                    {feature.heading.split(" ")[0]} <br />
+                    {feature.heading.split(" ").slice(1).join(" ")}
+                  </AnimateHeading>
                 </div>
-                <StaggeredHeading className="mb-6 text-2xl lg:mb-8 lg:text-4xl lg:leading-[1.2] text-dark-foreground">
-                  {DarkFeature.heading}
-                </StaggeredHeading>
-                <AnimateHeading className="text-dark-chapeau lg:text-lg leading-[1.3]">
-                  {DarkFeature.description}
-                </AnimateHeading>
+                <p className="text-dark-chapeau lg:text-lg leading-[1.3]">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -82,7 +85,7 @@ export const DarkFeatureDefaults: DarkFeatureProps = {
   description:
     "Embracing automation and digitalization is no longer optional—it’s essential. As technology rapidly advances, businesses must adapt to stay competitive and relevant.",
   button: { title: "Discover new solutions ", variant: "dark-default" },
-  DarkFeatures: [
+  features: [
     {
       icon: {
         src: "/integration.svg",

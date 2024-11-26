@@ -28,35 +28,24 @@ export const Header = (props: HeaderProps) => {
       )}
     >
       <SplineWrapper />
+
       <div className="container container-padding bg-transparent lg:bg-dark-background">
-        <div className="pt-20 lg:py-48">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-5">
+        <div className="lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="z-10">
-              <h1 className="mb-5 text-7xl font-light md:mb-6 lg:text-[100px]">
-                <StaggeredHeading
-                  wordClassName="text-accent"
-                  staggerChildren={0.15}
-                >
+              <h1 className="mb-5 text-7xl font-light md:mb-6 lg:text-[80px]">
+                <StaggeredHeading wordClassName="text-accent">
                   {coloredHeading}
                 </StaggeredHeading>
-                <StaggeredHeading
-                  wordClassName="text-gradient"
-                  staggerChildren={0.15}
-                >
+                <StaggeredHeading wordClassName="text-gradient">
                   {heading}
                 </StaggeredHeading>
               </h1>
-              <AnimateHeading>
-                <p className="text-2xl text-gradient">{description}</p>
-              </AnimateHeading>
-
-              <AnimateHeading>
-                <button className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5">
-                  <ArrowDown />
-                </button>
-              </AnimateHeading>
+              <p className="text-2xl text-gradient">{description}</p>
+              <button className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5">
+                <ArrowDown />
+              </button>
             </div>
-            <div className="hidden lg:flex" />
           </div>
         </div>
       </div>

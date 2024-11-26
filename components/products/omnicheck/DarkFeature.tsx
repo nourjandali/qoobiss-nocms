@@ -42,7 +42,7 @@ export const DarkFeature = (props: DarkFeatureProps) => {
             </AnimateHeading>
             <p className="text-lg text-dark-chapeau">{description}</p>
             <div className="mt-6 items-center gap-x-4 md:mt-10 lg:flex hidden">
-              <Link href="/partner-with-us">
+              <Link href="https://calendly.com/qoobiss/30min">
                 <Button {...button}>{button.title}</Button>
               </Link>
             </div>
@@ -71,7 +71,7 @@ export const DarkFeature = (props: DarkFeatureProps) => {
           </div>
         </div>
         <div className="mt-12 flex items-center justify-center gap-x-4 lg:mt-0 lg:hidden">
-          <Link href="/partner-with-us">
+          <Link href="https://calendly.com/qoobiss/30min">
             <Button {...button}>{button.title}</Button>
           </Link>
         </div>
@@ -129,5 +129,5 @@ export const DarkFeatureDefaults: DarkFeatureProps = {
         "Benefit from a comprehensive risk management approach with features like detailed individual profile photographs, 360-degree risk analysis, updates every 48 hours for Politically Exposed Persons (PEPs), and sanctions updates every 30 minutes. Regular updates on reputational risk exposure (RRE) ensure that your data remains current and actionable.",
     },
   ],
-  button: { title: "Let's talk", variant: "dark-default" },
+  button: { title: "Book a demo", variant: "dark-default" },
 };

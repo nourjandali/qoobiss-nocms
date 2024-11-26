@@ -42,7 +42,7 @@ export const DarkFeature = (props: DarkFeatureProps) => {
             </AnimateHeading>
             <p className="text-lg text-dark-chapeau">{description}</p>
             <div className="mt-6 items-center gap-x-4 md:mt-10 lg:flex hidden">
-              <Link href="/partner-with-us">
+              <Link href="https://calendly.com/qoobiss/30min">
                 <Button {...button}>{button.title}</Button>
               </Link>
             </div>
@@ -71,7 +71,7 @@ export const DarkFeature = (props: DarkFeatureProps) => {
           </div>
         </div>
         <div className="mt-12 flex items-center justify-center gap-x-4 lg:mt-0 lg:hidden">
-          <Link href="/partner-with-us">
+          <Link href="https://calendly.com/qoobiss/30min">
             <Button {...button}>{button.title}</Button>
           </Link>
         </div>
@@ -129,5 +129,5 @@ export const DarkFeatureDefaults: DarkFeatureProps = {
         "Verification is made through multiple layers and actions to prove identity. It also scans and cross checks data through Machine Reading Zones (MRZ).",
     },
   ],
-  button: { title: "Let's talk", variant: "dark-default" },
+  button: { title: "Book a demo", variant: "dark-default" },
 };
