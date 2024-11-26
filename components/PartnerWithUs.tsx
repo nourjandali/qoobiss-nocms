@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useFormspark } from "@formspark/use-formspark";
 import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
@@ -16,6 +16,7 @@ type InputField = {
   placeholder: string;
   type?: string;
   name: string;
+  required?: boolean;
 };
 
 type Items = {
@@ -88,11 +89,19 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
     }));
   };
 
+  // Check if required fields are filled
+  const areRequiredFieldsFilled = useMemo(() => {
+    const requiredFields = form.inputs.filter((input) => input.required);
+    return requiredFields.every(
+      (field) => formData[field.name] && formData[field.name].trim() !== ""
+    );
+  }, [formData, form.inputs]);
+
   // Handle successful submission celebration
   const celebrate = () => {
     setShowConfetti(true);
     toast({
-      title: "Success!", // Simple string
+      title: "Success!",
       description: "Thanks for reaching out! We'll get back to you soon.",
       className: "bg-white text-light-foreground border-none",
     });
@@ -112,6 +121,15 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
         variant: "destructive",
         title: "Error",
         description: "Please agree to the terms before submitting.",
+      });
+      return;
+    }
+
+    if (!areRequiredFieldsFilled) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Please fill in all required fields.",
       });
       return;
     }
@@ -187,7 +205,7 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
                   name={input.name}
                   value={formData[input.name] || ""}
                   onChange={handleInputChange}
-                  required
+                  required={input.required || false}
                 />
               ))}
             </div>
@@ -212,7 +230,9 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
               <Button
                 type="submit"
                 variant="light-default"
-                disabled={submitting || !agreedToTerms}
+                disabled={
+                  submitting || !agreedToTerms || !areRequiredFieldsFilled
+                }
               >
                 {submitting ? "Sending..." : form.submitButton}
               </Button>
@@ -220,19 +240,19 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
           </form>
         </div>
       </div>
-      {/* <div className="pt-20 pb-5 flex items-center justify-center lg:container lg:container-padding">
-        <img
-          src={images.main.src}
-          alt={images.main.alt}
-          className="lg:rounded-2xl aspect-video object-cover"
-        />
-      </div> */}
       <GetInTouch />
-      <div className="absolute -z-10 inset-0 pointer-events-none">
+      <div className="absolute -z-10 inset-0 pointer-events-none size-full lg:block opacity-50 hidden">
         <img
-          src={images.background.src}
-          alt={images.background.alt}
-          className="object-cover w-full h-1/2"
+          src="/banner-ellipse.png"
+          alt="Banner ellipse"
+          className="object-cover"
+        />
+      </div>
+      <div className="absolute -z-10 inset-0 pointer-events-none lg:hidden">
+        <img
+          src="/home-ellipse.png"
+          alt="Banner ellipse"
+          className="object-cover w-full"
         />
       </div>
     </section>
@@ -277,12 +297,22 @@ export const PartnerWithUsDefaults: PartnerWithUsProps = {
   form: {
     formsparkId: "pPRlp06q0",
     inputs: [
-      { placeholder: "Name", name: "Name" },
-      { placeholder: "Company email", name: "Email", type: "email" },
-      { placeholder: "Phone number", name: "Phone", type: "tel" },
-      { placeholder: "Job title", name: "Job Title" },
-      { placeholder: "Language", name: "Language" },
-      { placeholder: "Message", name: "Message" },
+      { placeholder: "Name*", name: "Name", required: true },
+      {
+        placeholder: "Company email*",
+        name: "Email",
+        type: "email",
+        required: true,
+      },
+      {
+        placeholder: "Phone number*",
+        name: "Phone",
+        type: "tel",
+        required: true,
+      },
+      { placeholder: "Job title", name: "Job Title", required: false },
+      { placeholder: "Country", name: "Country", required: false },
+      { placeholder: "Message", name: "Message", required: false },
     ],
     terms: {
       title: "I have read and agree with our ",

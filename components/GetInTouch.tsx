@@ -31,20 +31,21 @@ export const GetInTouch = (props: GetInTouchProps) => {
             className="absolute inset-0 size-full object-cover z-0"
           />
           <div className="relative z-10 flex flex-col justify-center items-center lg:justify-normal lg:items-start gap-10 lg:gap-20">
-            <p className="text-electric-violet text-xl font-semibold uppercase">
+            <p className="text-electric-violet text-base lg:text-xl font-semibold uppercase">
               Connect with us
             </p>
-            <h2 className="lg:text-[90px] text-8xl font-light lg:w-[50%] text-center lg:text-left">
+            <h2 className="lg:text-[90px] text-8xl lg:w-[50%] text-center lg:text-left lg:font-light">
               <span className="text-gradient">Book a</span>{" "}
-              <span className="text-gradient lg:hidden">demo</span>
-              <div className="flex items-center lg:justify-normal justify-center lg:gap-6">
-                <span className="text-accent hidden lg:block">demo</span>
-                <Link
-                  className="mt-8 lg:mt-0"
-                  href="https://calendly.com/qoobiss/30min"
-                >
-                  <CtaIcon />
-                </Link>
+              <div className="lg:flex lg:gap-6 lg:items-center">
+                <span className="text-accent">demo</span>
+                <div className="flex items-center lg:justify-normal justify-center">
+                  <Link
+                    className="mt-8 lg:mt-0"
+                    href="https://calendly.com/qoobiss/30min"
+                  >
+                    <CtaIcon />
+                  </Link>
+                </div>
               </div>
             </h2>
           </div>
