@@ -78,12 +78,12 @@ export const LightFeature = (props: LightFeatureProps) => {
                   </StaggeredHeading>
                 </div>
                 <div className="flex flex-col flex-1 justify-between">
-                  <h1 className="text-2xl lg:text-4xl text-light-foreground mb-8">
+                  <StaggeredHeading className="text-2xl lg:text-4xl text-light-foreground mb-6">
                     {section.heading}
-                  </h1>
-                  <p className="text-light-chapeau lg:text-lg leading-[1.3]">
+                  </StaggeredHeading>
+                  <AnimateHeading className="text-light-chapeau lg:text-lg leading-[1.3]">
                     {section.description}
-                  </p>
+                  </AnimateHeading>
                 </div>
               </div>
             ))}
