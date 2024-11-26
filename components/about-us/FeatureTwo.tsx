@@ -55,7 +55,7 @@ const Feature = ({ ...feature }: Feature) => {
       <StaggeredHeading className="text-4xl text-electric-violet">
         {feature.number}
       </StaggeredHeading>
-      <StaggeredHeading className="text-2xl lg:text-4xl pt-8 text-light-foreground lg:pt-[140px]">
+      <StaggeredHeading className="text-2xl lg:text-4xl pt-8 text-light-foreground ">
         {feature.heading}
       </StaggeredHeading>
       <p className="lg:text-lg text-light-chapeau">{feature.description}</p>

@@ -76,7 +76,7 @@ const Feature = ({ ...feature }: Feature) => {
         <div className="flex flex-col flex-grow justify-between">
           <StaggeredHeading
             delay={1}
-            className="text-2xl lg:text-4xl pt-8 text-light-foreground lg:pt-[140px]"
+            className="text-2xl lg:text-4xl pt-8 text-light-foreground"
           >
             {feature.heading}
           </StaggeredHeading>

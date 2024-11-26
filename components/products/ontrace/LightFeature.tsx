@@ -45,7 +45,7 @@ export const LightFeature = (props: LightFeatureProps) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 items-center lg:grid-cols-3 justify-center gap-5 z-10">
+        <div className="grid grid-cols-1 items-center lg:grid-cols-2 justify-center gap-5 z-10">
           {features.map((feature, index) => (
             <Feature key={index} {...feature} />
           ))}
@@ -73,8 +73,8 @@ const Feature = ({ ...feature }: Feature) => {
             className="size-32"
           />
         </div>
-        <div className="flex flex-col flex-grow justify-between">
-          <StaggeredHeading className="text-2xl lg:text-4xl pt-8 text-light-foreground lg:pt-[140px]">
+        <div className="flex flex-col flex-grow justify-start">
+          <StaggeredHeading className="text-2xl lg:text-4xl pt-8 text-light-foreground">
             {feature.heading}
           </StaggeredHeading>
           <AnimateHeading className="lg:text-lg text-light-chapeau mt-4">
@@ -121,21 +121,21 @@ export const LightFeatureDefaults: LightFeatureProps = {
     },
     {
       image: {
-        src: "/leverage.svg",
-        alt: "Leverage icon",
-      },
-      heading: "Leverage Advanced Technology",
-      description:
-        "Ontrace provides access to the latest in verification technology, including extensive document databases and AI-powered analysis tools, making it easier to compile and assess necessary information for proper verification not only to comply with regulatory requirements but also to protect the financial system, enhance customer trust, and support law enforcement efforts against financial crimes.",
-    },
-    {
-      image: {
         src: "/improve.svg",
         alt: "Improve icon",
       },
       heading: "Improve Customer Experience",
       description:
         "Automated and efficient processes with minimal physical interaction cater to the modern customer's expectations for instant and hassle-free services, enhancing overall user experience.",
+    },
+    {
+      image: {
+        src: "/leverage.svg",
+        alt: "Leverage icon",
+      },
+      heading: "Leverage Advanced Technology",
+      description:
+        "Ontrace provides access to the latest in verification technology, including extensive document databases and AI-powered analysis tools, making it easier to compile and assess necessary information for proper verification not only to comply with regulatory requirements but also to protect the financial system, enhance customer trust, and support law enforcement efforts against financial crimes.",
     },
   ],
 };
