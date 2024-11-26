@@ -115,7 +115,7 @@ export const FaqDefaults: FaqProps = {
     },
   ],
   buttonMobile: {
-    title: "More about us",
+    title: "Book a demo",
     variant: "light-default",
   },
 };
