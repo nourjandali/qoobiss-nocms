@@ -45,11 +45,11 @@ export const LightFeature = (props: LightFeatureProps) => {
             <p className="font-semibold mb-6 uppercase text-xl leading-[1.3] text-electric-violet">
               {tagline}
             </p>
-            <div className="flex lg:flex-row flex-col gap-5 self-stretch items-start w-full">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:justify-between lg:gap-40">
               <StaggeredHeading className="text-4xl lg:font-light lg:text-11xl text-light-foreground">
                 {heading}
               </StaggeredHeading>
-              <div className="lg:w-1/2">
+              <div>
                 <p className="text-light-chapeau lg:text-lg">{description}</p>
                 <div className="py-12 flex lg:justify-normal justify-center items-center gap-4 lg:mt-[30px]">
                   <Link href="/partner-with-us">
@@ -78,12 +78,12 @@ export const LightFeature = (props: LightFeatureProps) => {
                   </StaggeredHeading>
                 </div>
                 <div className="flex flex-col flex-1 justify-between">
-                  <StaggeredHeading className="text-2xl lg:text-4xl text-light-foreground lg:min-h-24">
+                  <h1 className="text-2xl lg:text-4xl text-light-foreground mb-8">
                     {section.heading}
-                  </StaggeredHeading>
-                  <AnimateHeading className="text-light-chapeau lg:text-lg leading-[1.3] mt-3">
+                  </h1>
+                  <p className="text-light-chapeau lg:text-lg leading-[1.3]">
                     {section.description}
-                  </AnimateHeading>
+                  </p>
                 </div>
               </div>
             ))}
