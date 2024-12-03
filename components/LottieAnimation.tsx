@@ -1,16 +1,23 @@
 // LottieAnimation.js
 import React from "react";
-import lottie from "lottie-web";
+import lottie, { AnimationItem } from "lottie-web";
 import { useEffect, useRef, useState } from "react";
 
-const LottieAnimation = ({
+interface LottieAnimationProps {
+  animationData: any;
+  width?: string;
+  height?: string;
+  loop?: boolean;
+}
+
+const LottieAnimation: React.FC<LottieAnimationProps> = ({
   animationData,
   width = "100%",
   height = "100%",
   loop = true,
 }) => {
   const containerRef = useRef(null);
-  const animationRef = useRef(null);
+  const animationRef = useRef<AnimationItem | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
