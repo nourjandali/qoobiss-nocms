@@ -180,7 +180,7 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
                         className="text-light-chapeau text-sm lg:text-base flex flex-col"
                       >
                         <span className="font-semibold first-of-type:mt-4">
-                          {item.title}
+                          <a href={`mailto:${item.title}`}>{item.title}</a>
                         </span>
                         <span className="flex flex-col">
                           {item?.office?.map((office, officeIndex) => (

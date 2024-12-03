@@ -119,7 +119,12 @@ export const Footer = (props: FooterProps) => {
             <h2 className="text-md xxl:text-2xl text-light-foreground">
               Contact
             </h2>
-            <p className="text-light-chapeau text-sm">{contactInfo?.email}</p>
+            <a
+              href={`mailto:${contactInfo?.email}`}
+              className="text-light-chapeau text-sm"
+            >
+              {contactInfo?.email}
+            </a>
           </div>
 
           <div className="flex flex-col gap-2.5">

@@ -4,6 +4,8 @@
 import { Button, type ButtonProps } from "@/components/ui/button";
 import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
 import Link from "next/link";
+// import LottieAnimation from "@/components/LottieAnimation";
+// import animationData from "./lottie.json";
 
 type ImageProps = {
   src: string;
@@ -62,6 +64,12 @@ export const DarkFeature = (props: DarkFeatureProps) => {
                       className="size-24"
                       alt={feature.icon.alt}
                     />
+                    {/* <LottieAnimation
+                      animationData={animationData}
+                      width="96px"
+                      height="96px"
+                      loop={false}
+                    /> */}
                   </div>
                   <StaggeredHeading className="mb-6 text-2xl lg:mb-8 lg:text-4xl lg:leading-[1.2] text-dark-foreground">
                     {feature.heading}
