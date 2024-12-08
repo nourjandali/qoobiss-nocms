@@ -69,7 +69,7 @@ export const Products = (props: ProductsProps) => {
           className={cn(
             "fixed inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500",
             "bg-[right_-2rem_top_0rem] [background-size:700px] bg-no-repeat",
-            "md:bg-[right_-7rem_top_0rem] md:[background-size:1200px]",
+            "sm:bg-[right_-7rem_top_0rem] sm:[background-size:1200px]",
             "lg:[background-size:cover]",
             {
               "opacity-100": activeSection === index,
