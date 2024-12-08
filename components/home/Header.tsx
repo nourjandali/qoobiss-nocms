@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import clsx from "clsx";
 import { AnimateHeading, StaggeredHeading } from "../ui/word-curtain";
 import { SplineWrapper } from "../SplineWrapper";
@@ -17,6 +18,16 @@ export const Header = (props: HeaderProps) => {
     ...HeaderDefaults,
     ...props,
   } as Props;
+
+  const scrollToCta = () => {
+    const ctaSection = document.getElementById("next-section");
+    if (ctaSection) {
+      const yOffset = -100; // Offset to account for any fixed headers
+      const y =
+        ctaSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
 
   return (
     <section
@@ -45,7 +56,11 @@ export const Header = (props: HeaderProps) => {
               </StaggeredHeading>
             </h1>
             <p className="text-2xl text-gradient">{description}</p>
-            <button className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5">
+            <button
+              onClick={scrollToCta}
+              className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5 transition-all hover:translate-y-1 hover:border-white/25 focus:outline-none focus:ring-2 focus:ring-white/20"
+              aria-label="Scroll to Why Qoobiss section"
+            >
               <ArrowDown />
             </button>
           </div>
