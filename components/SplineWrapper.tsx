@@ -17,9 +17,12 @@ export const SplineWrapper = () => {
   }
 
   return isDesktop ? (
-    <Spline
-      scene="https://prod.spline.design/EnrrqgBMC0Dgrjos/scene.splinecode"
-      className="absolute inset-0 size-full"
-    />
+    <div className="sticky top-0 h-screen">
+      <Spline
+        // scene="https://prod.spline.design/EnrrqgBMC0Dgrjos/scene.splinecode"
+        scene="https://prod.spline.design/oH19N8SNWFZLV8gb/scene.splinecode"
+        className="w-full h-full"
+      />
+    </div>
   ) : null;
 };

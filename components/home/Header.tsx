@@ -23,46 +23,34 @@ export const Header = (props: HeaderProps) => {
       className={clsx(
         "relative size-full h-[150vh] sm:h-[80vh] flex items-end justify-end lg:justify-normal lg:items-stretch lg:h-auto pb-24 lg:pb-0",
         "bg-[url('/home-background-mobile.png')] lg:bg-none",
-        "bg-dark-background bg-right-top bg-no-repeat lg:bg-center lg:bg-cover",
+        "bg-dark-background [background-position:0px_-20px] bg-no-repeat lg:bg-center lg:bg-cover",
         props.className
       )}
     >
-      <SplineWrapper />
+      {/* Spline container - fixed on the right side */}
+      <div className="absolute top-0 right-0 h-full hidden lg:w-[55%] lg:block">
+        <SplineWrapper />
+      </div>
 
-      <div className="container container-padding bg-transparent lg:bg-dark-background">
+      {/* Content container */}
+      <div className="container container-padding relative z-10">
         <div className="lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="z-10">
-              <h1 className="mb-5 text-7xl font-light md:mb-6 lg:text-[80px]">
-                <StaggeredHeading wordClassName="text-accent">
-                  {coloredHeading}
-                </StaggeredHeading>
-                <StaggeredHeading wordClassName="text-gradient">
-                  {heading}
-                </StaggeredHeading>
-              </h1>
-              <p className="text-2xl text-gradient">{description}</p>
-              <button className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5">
-                <ArrowDown />
-              </button>
-            </div>
+          <div className="lg:max-w-[45%]">
+            <h1 className="mb-5 text-7xl font-light md:mb-6 lg:text-[80px]">
+              <StaggeredHeading wordClassName="text-accent">
+                {coloredHeading}
+              </StaggeredHeading>
+              <StaggeredHeading wordClassName="text-gradient">
+                {heading}
+              </StaggeredHeading>
+            </h1>
+            <p className="text-2xl text-gradient">{description}</p>
+            <button className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5">
+              <ArrowDown />
+            </button>
           </div>
         </div>
       </div>
-      {/* <div className="absolute z-0 inset-0 pointer-events-none size-full lg:block hidden">
-        <img
-          src="/banner-ellipse.png"
-          alt="Banner ellipse"
-          className="object-cover"
-        />
-      </div>
-      <div className="absolute z-0 inset-0 pointer-events-none lg:hidden">
-        <img
-          src="/home-ellipse.png"
-          alt="Banner ellipse"
-          className="object-cover w-full"
-        />
-      </div> */}
     </section>
   );
 };
