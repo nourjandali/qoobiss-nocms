@@ -67,12 +67,14 @@ export const Products = (props: ProductsProps) => {
           key={index}
           className={clsx(
             "fixed inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500",
-            "bg-dark-background bg-center [background-size:cover] bg-no-repeat",
-            "md:[background-size:800px]",
-            "lg:bg-[right_-7rem_top_0rem] lg:[background-size:cover]",
+            "bg-dark-background bg-center [background-size:700px] bg-no-repeat",
+            "md:bg-[right_-7rem_top_0rem] md:[background-size:1200px]",
+            "lg:[background-size:cover]",
             {
               "opacity-100": activeSection === index,
               "opacity-0": activeSection !== index,
+              "[background-size:650px] lg:bg-[right_-10rem_top_0rem] ":
+                index === 1,
             }
           )}
           style={{ backgroundImage: `url(${image.src})` }}

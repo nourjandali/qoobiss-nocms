@@ -22,7 +22,9 @@ export const Header = (props: HeaderProps) => {
   const scrollToCta = () => {
     const ctaSection = document.getElementById("next-section");
     if (ctaSection) {
-      const y = ctaSection.getBoundingClientRect().top + window.pageYOffset;
+      const yOffset = -100;
+      const y =
+        ctaSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
