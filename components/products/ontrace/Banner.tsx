@@ -36,7 +36,7 @@ export const Banner = (props: BannerProps) => {
       className={clsx(
         "relative flex flex-col items-end justify-end lg:justify-center lg:items-center size-full min-h-[850px] lg:h-[80vh] pb-20 lg:pb-0",
         "bg-[url('/ontrace.png')]",
-        "bg-dark-background bg-[right_-3rem_top_-4rem] [background-size:700px] bg-no-repeat",
+        "bg-dark-background bg-[right_-72px_top_-70px] [background-size:700px] bg-no-repeat",
         "md:[background-size:800px]",
         "lg:bg-center lg:[background-size:cover]",
         props.className

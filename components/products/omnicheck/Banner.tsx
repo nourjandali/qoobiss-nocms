@@ -36,7 +36,7 @@ export const Banner = (props: BannerProps) => {
       className={clsx(
         "relative flex flex-col items-end justify-end lg:justify-center lg:items-center size-full min-h-[925px] lg:h-[80vh] pb-20 lg:pb-0",
         "bg-[url('/omnicheck.png')]",
-        "bg-dark-background bg-[right_-3rem_top_-5rem] [background-size:700px] bg-no-repeat",
+        "bg-dark-background bg-[right_-58px_top_-80px] [background-size:700px] bg-no-repeat",
         "md:[background-size:900px]",
         "lg:bg-center lg:[background-size:cover]",
         props.className

@@ -22,9 +22,7 @@ export const Header = (props: HeaderProps) => {
   const scrollToCta = () => {
     const ctaSection = document.getElementById("next-section");
     if (ctaSection) {
-      const yOffset = -100; // Offset to account for any fixed headers
-      const y =
-        ctaSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      const y = ctaSection.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
@@ -32,38 +30,41 @@ export const Header = (props: HeaderProps) => {
   return (
     <section
       className={clsx(
-        "relative size-full h-[150vh] sm:h-[80vh] flex items-end justify-end lg:justify-normal lg:items-stretch lg:h-auto pb-24 lg:pb-0",
+        "relative min-h-screen flex flex-col lg:flex-row lg:items-stretch pb-24 lg:pb-0 lg:min-h-[auto]",
         "bg-[url('/home-background-mobile.png')] lg:bg-none",
-        "bg-dark-background [background-position:0px_-20px] bg-no-repeat lg:bg-center lg:bg-cover",
+        "bg-dark-background bg-no-repeat [background-size:100%_auto] lg:bg-center lg:bg-cover",
         props.className
       )}
     >
-      {/* Spline container - fixed on the right side */}
+      <div
+        className="w-full lg:hidden"
+        style={{
+          paddingTop: "calc(100% * 1)",
+        }}
+      />
+
       <div className="absolute top-0 right-0 h-full hidden lg:w-[55%] lg:block">
         <SplineWrapper />
       </div>
 
-      {/* Content container */}
-      <div className="container container-padding relative z-10">
-        <div className="lg:py-24">
-          <div className="lg:max-w-[45%]">
-            <h1 className="mb-5 text-7xl font-light md:mb-6 lg:text-[80px]">
-              <StaggeredHeading wordClassName="text-accent">
-                {coloredHeading}
-              </StaggeredHeading>
-              <StaggeredHeading wordClassName="text-gradient">
-                {heading}
-              </StaggeredHeading>
-            </h1>
-            <p className="text-2xl text-gradient">{description}</p>
-            <button
-              onClick={scrollToCta}
-              className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5 transition-all hover:translate-y-1 hover:border-white/25 focus:outline-none focus:ring-2 focus:ring-white/20"
-              aria-label="Scroll to Why Qoobiss section"
-            >
-              <ArrowDown />
-            </button>
-          </div>
+      <div className="container container-padding z-10 lg:static">
+        <div className="lg:py-24 lg:max-w-[45%]">
+          <h1 className="mb-5 text-7xl font-light md:mb-6 lg:text-[80px]">
+            <StaggeredHeading wordClassName="text-accent">
+              {coloredHeading}
+            </StaggeredHeading>
+            <StaggeredHeading wordClassName="text-gradient">
+              {heading}
+            </StaggeredHeading>
+          </h1>
+          <p className="text-2xl text-gradient">{description}</p>
+          <button
+            onClick={scrollToCta}
+            className="mt-12 flex items-end justify-center w-[60px] h-[93px] rounded-[85px] border-[1.5px] border-white/15 pb-5 transition-all hover:translate-y-1 hover:border-white/25 focus:outline-none focus:ring-2 focus:ring-white/20"
+            aria-label="Scroll to Why Qoobiss section"
+          >
+            <ArrowDown />
+          </button>
         </div>
       </div>
     </section>
