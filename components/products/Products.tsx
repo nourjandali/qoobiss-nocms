@@ -9,6 +9,7 @@ import {
 import clsx from "clsx";
 import Link from "next/link";
 import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
+import { cn } from "@/lib/utils";
 
 type ButtonProps = OriginalButtonProps & {
   href?: string;
@@ -61,19 +62,19 @@ export const Products = (props: ProductsProps) => {
   }, [contents.length]);
 
   return (
-    <section className="relative bg-dark-indigo">
+    <section className="relative bg-dark-background">
       {images.map((image, index) => (
         <div
           key={index}
-          className={clsx(
+          className={cn(
             "fixed inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500",
-            "bg-dark-background bg-center [background-size:700px] bg-no-repeat",
+            "bg-[right_-2rem_top_0rem] [background-size:700px] bg-no-repeat",
             "md:bg-[right_-7rem_top_0rem] md:[background-size:1200px]",
             "lg:[background-size:cover]",
             {
               "opacity-100": activeSection === index,
               "opacity-0": activeSection !== index,
-              "[background-size:650px] lg:bg-[right_-10rem_top_0rem] ":
+              "bg-[right_-5rem_top_0rem] lg:bg-[right_-10rem_top_0rem] ":
                 index === 1,
             }
           )}
