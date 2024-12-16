@@ -20,7 +20,7 @@ type InputField = {
 };
 
 type Items = {
-  title: string;
+  title?: string;
   office?: string[];
 };
 
@@ -162,12 +162,12 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
       )}
       <div className="container container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20">
-          <div className="flex flex-col items-start gap-12 self-stretch">
+          <div>
             <StaggeredHeading className="self-stretch text-4xl text-light-foreground">
               {heading}
             </StaggeredHeading>
-            <p className="lg:text-lg text-light-chapeau">{description}</p>
-            <div className="flex flex-col items-start gap-10 self-stretch">
+            <p className="lg:text-lg text-light-chapeau mt-4">{description}</p>
+            <div className="flex flex-col items-start gap-10 self-stretch mt-12">
               {infoSections.map((section, index) => (
                 <div key={index} className="flex flex-col items-start gap-2.5">
                   <StaggeredHeading className="text-2xl text-light-foreground">
@@ -179,9 +179,11 @@ export const PartnerWithUs = (props: PartnerWithUsProps) => {
                         key={itemIndex}
                         className="text-light-chapeau text-sm lg:text-base flex flex-col"
                       >
-                        <span className="font-semibold first-of-type:mt-4">
-                          <a href={`mailto:${item.title}`}>{item.title}</a>
-                        </span>
+                        {item.title && (
+                          <span className="font-semibold">
+                            <a href={`mailto:${item.title}`}>{item.title}</a>
+                          </span>
+                        )}
                         <span className="flex flex-col">
                           {item?.office?.map((office, officeIndex) => (
                             <span key={officeIndex}>{office}</span>
@@ -268,19 +270,10 @@ export const PartnerWithUsDefaults: PartnerWithUsProps = {
       title: "Office",
       items: [
         {
-          title: "Working Point Address",
           office: [
             "Expo Business Park",
             "54A Av. Popisteanu Street, 1st floor,",
             "Bucharest, Romania",
-          ],
-        },
-        {
-          title: "Registered Address",
-          office: [
-            "Admax Center Building",
-            "1/i Bld Pipera Street, office 6, 3rd  floor,",
-            "Voluntari, Ilfov County, Romania",
           ],
         },
       ],

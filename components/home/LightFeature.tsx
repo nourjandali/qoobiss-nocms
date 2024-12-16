@@ -5,6 +5,11 @@ import { Button, type ButtonProps } from "@/components/ui/button";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import AnimateHeading, { StaggeredHeading } from "../ui/word-curtain";
 import Link from "next/link";
+import LottieAnimation from "../LottieAnimation";
+import madeAnimation from "@/assets/made.json";
+import instantAnimation from "@/assets/instant.json";
+import enhancedAnimation from "@/assets/enhanced.json";
+import performanceAnimation from "@/assets/performance.json";
 
 type ImageProps = {
   src: string;
@@ -13,7 +18,7 @@ type ImageProps = {
 
 type SectionProps = {
   number: string;
-  icon: ImageProps;
+  icon: any;
   heading: string;
   description: string;
 };
@@ -68,11 +73,18 @@ export const LightFeature = (props: LightFeatureProps) => {
                 className="flex flex-col p-[30px] lg:p-14 h-full bg-white/40 rounded-2xl"
               >
                 <div className="flex w-full items-center justify-between">
-                  <img
-                    src={section.icon.src}
-                    className="size-28 lg:size-40 -ml-6 lg:-ml-10"
-                    alt={section.icon.alt}
-                  />
+                  <div
+                    className={`${
+                      index === 0 ? "-ml-8 mb-8" : "mb-8"
+                    } relative size-24`}
+                  >
+                    <LottieAnimation
+                      animationData={section.icon}
+                      width={index === 0 ? "164px" : "96px"}
+                      height="96px"
+                      loop={false}
+                    />
+                  </div>
                   <StaggeredHeading className="text-electric-violet leading-[1.2] text-2xl lg:text-4xl -mt-8 lg:-mt-12">
                     {section.number}
                   </StaggeredHeading>
@@ -103,40 +115,28 @@ export const LightFeatureDefaults: LightFeatureProps = {
   sections: [
     {
       number: "01",
-      icon: {
-        src: "/ai-biometric.svg",
-        alt: "Biometric icon",
-      },
+      icon: madeAnimation,
       heading: "Made for digital age",
       description:
         "Meet your customers where they search for you—in the digital environment. Enable your business to seamlessly connect with customers online, ensuring you are present at every crucial touchpoint of their journey.",
     },
     {
       number: "02",
-      icon: {
-        src: "/execution.svg",
-        alt: "Instant execution icon",
-      },
+      icon: instantAnimation,
       heading: "Instant Execution",
       description:
         "Accelerate the launch of new products and modify workflows with exceptional rapidity. Our digital tools enable your business to create swift and agile flows, allowing you to adapt quickly to market demands without delay.",
     },
     {
       number: "03",
-      icon: {
-        src: "/enhanced.svg",
-        alt: "Enhanced Competitiveness icon",
-      },
+      icon: enhancedAnimation,
       heading: "Enhanced Competitiveness",
       description:
         "Secure a strategic advantage with our flexible digital tools that keep your business agile and proactive in responding to market shifts. Experience enhanced competitiveness as you efficiently tackle new challenges and opportunities.",
     },
     {
       number: "04",
-      icon: {
-        src: "/performance.svg",
-        alt: "Performance Growth icon",
-      },
+      icon: performanceAnimation,
       heading: "Performance Growth",
       description:
         "Reduce operational and capital costs by automating routine processes. Qoobiss solutions not only enhance efficiency but also help you achieve new business objectives faster, contributing to significant performance improvements.",

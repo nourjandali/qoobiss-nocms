@@ -7,7 +7,7 @@ export default function Home() {
       <Banner title="Terms and Conditions" />
       <article className="prose prose-slate max-w-xxs lg:max-w-7xl mx-auto py-8">
         <div className="mb-8">
-          <p className="text-sm text-gray-600">Last updated on 06.11.2024</p>
+          <p className="text-sm text-gray-600">Last updated on 02.12.2024</p>
         </div>
 
         <section className="mb-8">
@@ -35,12 +35,12 @@ export default function Home() {
 
         <section className="mb-8">
           <h3 className="font-semibold">2. Who We Are</h3>
-          <p>- S.C. CREDIMATIC NETWORK S.R.L. Voluntari</p>
+          <p>- S.C. CREDIMATIC NETWORK S.R.L.</p>
           <p className="mb-4">Our contact details are:</p>
           <ul className="list-none">
             <li>
-              - Registered office address: 1/i Bld Pipera Street, Admax Center
-              Building, office 6, 3rd floor, Voluntari, Ilfov County, Romania
+              - Registered office address: 54A Av. Popisteanu Street, Expo
+              Business Park, 1st floor, Bucharest, Romania.
             </li>
             <li>- Email address: dpo@qoobiss.com</li>
           </ul>
