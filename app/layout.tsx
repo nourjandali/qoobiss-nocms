@@ -27,7 +27,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // Fetch navigation data
-  const response = await client.queries.navigation({
+  const navigationData = await client.queries.navigation({
     relativePath: "navbar.json",
   });
 
@@ -42,7 +42,11 @@ export default async function RootLayout({
           data-version="062024"
         />
         <main>
-          <Navbar data={response.data.navigation} />
+          <Navbar
+            data={navigationData.data}
+            query={navigationData.query}
+            variables={navigationData.variables}
+          />
           {children}
           <Footer />
         </main>

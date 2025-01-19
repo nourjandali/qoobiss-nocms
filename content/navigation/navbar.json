@@ -43,9 +43,7 @@
     ],
     "logo": {
       "src": "/qoobiss.svg",
-      "alt": "Qoobiss logo",
-      "height": 125,
-      "width": 125
+      "alt": "Qoobiss logo"
     },
     "ctaButton": {
       "text": "Get in touch",
