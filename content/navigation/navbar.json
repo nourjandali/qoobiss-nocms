@@ -1,0 +1,55 @@
+{
+  "navigation": {
+    "navigationItems": [
+      {
+        "title": "Our Solutions",
+        "href": "/products",
+        "links": [
+          {
+            "title": "All products",
+            "href": "/products"
+          },
+          {
+            "title": "Origin",
+            "href": "/products/origin"
+          },
+          {
+            "title": "Ontrace",
+            "href": "/products/ontrace"
+          },
+          {
+            "title": "Omnicheck",
+            "href": "/products/omnicheck"
+          }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          {
+            "title": "About us",
+            "href": "/about-us"
+          },
+          {
+            "title": "Security & Compliance",
+            "href": "/security-and-compliance"
+          },
+          {
+            "title": "Partner with us",
+            "href": "/partner-with-us"
+          }
+        ]
+      }
+    ],
+    "logo": {
+      "src": "/qoobiss.svg",
+      "alt": "Qoobiss logo",
+      "height": 125,
+      "width": 125
+    },
+    "ctaButton": {
+      "text": "Get in touch",
+      "href": "/partner-with-us"
+    }
+  }
+}

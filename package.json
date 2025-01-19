@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -36,10 +36,12 @@
     "react-intersection-observer": "^9.13.1",
     "react-use": "^17.5.1",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tinacms": "^2.6.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@tinacms/cli": "^1.8.0",
+    "@types/node": "^20.17.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",

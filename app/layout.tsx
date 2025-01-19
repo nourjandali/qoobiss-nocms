@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import Script from "next/script";
+import client from "@/tina/__generated__/client";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,11 +21,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Fetch navigation data
+  const response = await client.queries.navigation({
+    relativePath: "navbar.json",
+  });
+
   return (
     <html lang="en">
       <body className={cn("font-sans antialiased", fontSans.variable)}>
@@ -36,7 +42,7 @@ export default function RootLayout({
           data-version="062024"
         />
         <main>
-          <Navbar />
+          <Navbar data={response.data.navigation} />
           {children}
           <Footer />
         </main>

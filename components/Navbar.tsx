@@ -23,65 +23,93 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-const navigationItems = [
-  {
-    title: "Our Solutions",
-    href: "/products",
-    links: [
-      { title: "All products", href: "/products" },
-      { title: "Origin", href: "/products/origin" },
-      { title: "Ontrace", href: "/products/ontrace" },
-      { title: "Omnicheck", href: "/products/omnicheck" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { title: "About us", href: "/about-us" },
-      { title: "Security & Compliance", href: "/security-and-compliance" },
-      { title: "Partner with us", href: "/partner-with-us" },
-    ],
-  },
-];
+// TinaCMS generated types
+interface NavigationLink {
+  __typename?: "NavigationNavigationItemsLinks";
+  title: string;
+  href: string;
+}
 
-const DesktopNav = () => {
+interface NavigationItem {
+  __typename?: "NavigationNavigationItems";
+  title: string;
+  href?: string | null;
+  links?: (NavigationLink | null)[] | null;
+}
+
+interface Logo {
+  src: string;
+  alt: string;
+  height: number;
+  width: number;
+}
+
+interface CTAButton {
+  text: string;
+  href: string;
+}
+
+interface NavigationContent {
+  navigationItems?: (NavigationItem | null)[] | null;
+  logo: Logo;
+  ctaButton: CTAButton;
+}
+
+interface NavigationData {
+  __typename?: "Navigation";
+  id: string;
+  navigation?: NavigationContent | null;
+}
+
+const DesktopNav = ({
+  navigationItems,
+}: {
+  navigationItems: (NavigationItem | null)[];
+}) => {
   const pathname = usePathname();
   const router = useRouter();
+
   return (
     <NavigationMenu>
       <NavigationMenuList className="hidden lg:flex">
-        {navigationItems.map((item, index) => (
-          <NavigationMenuItem key={index}>
-            <NavigationMenuTrigger
-              onClick={() => item.href && router.push(item.href)}
-              className={cn(
-                "cursor-pointer",
-                pathname === item.href && "text-electric-violet"
-              )}
-            >
-              {item.title}
-            </NavigationMenuTrigger>
-            <NavigationMenuContent className="flex flex-col items-start text-left w-72 gap-2 p-6">
-              {item.links
-                ?.filter((link) => link.title !== "All products")
-                .map((link, linkIndex) => (
-                  <NavigationMenuLink asChild key={linkIndex}>
-                    <Link
-                      href={link.href}
-                      className={cn(
-                        "block select-none leading-none p-2 w-full no-underline outline-none transition-colors text-light-foreground rounded-lg hover:text-electric-violet",
-                        pathname === link.href && "text-electric-violet"
-                      )}
-                    >
-                      <span className="text-base font-medium leading-none">
-                        {link.title}
-                      </span>
-                    </Link>
-                  </NavigationMenuLink>
-                ))}
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        ))}
+        {navigationItems.map(
+          (item, index) =>
+            item && (
+              <NavigationMenuItem key={index}>
+                <NavigationMenuTrigger
+                  onClick={() => item.href && router.push(item.href)}
+                  className={cn(
+                    "cursor-pointer",
+                    pathname === item.href && "text-electric-violet"
+                  )}
+                >
+                  {item.title}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="flex flex-col items-start text-left w-72 gap-2 p-6">
+                  {item.links
+                    ?.filter(
+                      (link): link is NavigationLink =>
+                        !!link && link.title !== "All products"
+                    )
+                    .map((link, linkIndex) => (
+                      <NavigationMenuLink asChild key={linkIndex}>
+                        <Link
+                          href={link.href}
+                          className={cn(
+                            "block select-none leading-none p-2 w-full no-underline outline-none transition-colors text-light-foreground rounded-lg hover:text-electric-violet",
+                            pathname === link.href && "text-electric-violet"
+                          )}
+                        >
+                          <span className="text-base font-medium leading-none">
+                            {link.title}
+                          </span>
+                        </Link>
+                      </NavigationMenuLink>
+                    ))}
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            )
+        )}
       </NavigationMenuList>
     </NavigationMenu>
   );
@@ -90,9 +118,15 @@ const DesktopNav = () => {
 const MobileNav = ({
   open,
   onOpenChange,
+  navigationItems,
+  logo,
+  ctaButton,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  navigationItems: (NavigationItem | null)[];
+  logo: Logo;
+  ctaButton: CTAButton;
 }) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -118,54 +152,90 @@ const MobileNav = ({
           <SheetTitle asChild>
             <Link href="/" className="flex items-center">
               <Image
-                src="/qoobiss.svg"
-                alt="Qoobiss logo"
-                height={125}
-                width={125}
+                src={logo.src}
+                alt={logo.alt}
+                height={logo.height}
+                width={logo.width}
               />
             </Link>
           </SheetTitle>
         </SheetHeader>
         <div className="flex flex-col gap-10 mt-6">
-          {navigationItems.map((item, index) => (
-            <div key={index} className="space-y-3">
-              <h2 className="font-bold text-lg focus:outline-none">
-                {item.title}
-              </h2>
-              <div className="flex flex-col gap-2">
-                {item.links?.map((link, linkIndex) => (
-                  <button
-                    key={linkIndex}
-                    onClick={() => handleLinkClick(link.href)}
-                    className={cn(
-                      "text-sm text-left hover:text-electric-violet",
-                      pathname === link.href
-                        ? "text-electric-violet"
-                        : "text-dark-foreground"
+          {navigationItems.map(
+            (item, index) =>
+              item && (
+                <div key={index} className="space-y-3">
+                  <h2 className="font-bold text-lg focus:outline-none">
+                    {item.title}
+                  </h2>
+                  <div className="flex flex-col gap-2">
+                    {item.links?.map(
+                      (link, linkIndex) =>
+                        link && (
+                          <button
+                            key={linkIndex}
+                            onClick={() => handleLinkClick(link.href)}
+                            className={cn(
+                              "text-sm text-left hover:text-electric-violet",
+                              pathname === link.href
+                                ? "text-electric-violet"
+                                : "text-dark-foreground"
+                            )}
+                          >
+                            {link.title}
+                          </button>
+                        )
                     )}
-                  >
-                    {link.title}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ))}
+                  </div>
+                </div>
+              )
+          )}
         </div>
         <Button
           variant="primary-dark"
           size="primary"
           className="mt-8 w-full"
-          onClick={() => handleLinkClick("/contact")}
+          onClick={() => handleLinkClick(ctaButton.href)}
         >
-          Get in touch
+          {ctaButton.text}
         </Button>
       </SheetContent>
     </Sheet>
   );
 };
 
-export const Navbar = () => {
+interface NavbarProps {
+  data: NavigationData;
+}
+
+export const Navbar = ({ data }: NavbarProps) => {
   const [open, setOpen] = useState(false);
+
+  // Default values
+  const defaultLogo = {
+    src: "/qoobiss.svg",
+    alt: "Qoobiss logo",
+    height: 125,
+    width: 125,
+  };
+
+  const defaultCTAButton = {
+    text: "Get in touch",
+    href: "/partner-with-us",
+  };
+
+  // Get navigation content with fallbacks
+  const navigationContent = data.navigation || {
+    navigationItems: [],
+    logo: defaultLogo,
+    ctaButton: defaultCTAButton,
+  };
+
+  const {
+    navigationItems = [],
+    logo = defaultLogo,
+    ctaButton = defaultCTAButton,
+  } = navigationContent;
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-dark-background border-b border-dark-stroke shadow-lg">
@@ -173,29 +243,35 @@ export const Navbar = () => {
         <div className="flex items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <Image
-              src="/qoobiss.svg"
-              alt="Qoobiss logo"
-              height={125}
-              width={125}
+              src={logo.src}
+              alt={logo.alt}
+              height={logo.height}
+              width={logo.width}
             />
           </Link>
 
           <div className="flex items-center gap-4">
-            <DesktopNav />
+            <DesktopNav navigationItems={navigationItems} />
             <Separator
               className="bg-white/25 h-8 mx-4 hidden lg:block"
               orientation="vertical"
             />
-            <Link href="/partner-with-us">
+            <Link href={ctaButton.href}>
               <Button
                 variant="primary-dark"
                 size="primary"
                 className="hidden lg:block"
               >
-                Get in touch
+                {ctaButton.text}
               </Button>
             </Link>
-            <MobileNav open={open} onOpenChange={setOpen} />
+            <MobileNav
+              open={open}
+              onOpenChange={setOpen}
+              navigationItems={navigationItems}
+              logo={logo}
+              ctaButton={ctaButton}
+            />
           </div>
         </div>
       </div>
